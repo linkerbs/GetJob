@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_recorder"
+        android:icon="@drawable/ic_recorder"
+        android:title="Mis Ofertas" />
+    <item
+        android:id="@+id/ic_supervisor_account"
+        android:icon="@drawable/ic_supervisor_account"
+        android:title="Solicitudes"/>
+    <item
+        android:id="@+id/ic_add_circle"
+        android:icon="@drawable/ic_add_circle"
+        android:title="Publicar Oferta"/>
+    <item
+        android:id="@+id/ic_chats"
+        android:icon="@drawable/ic_chats"
+        android:title="Chats"/>
+    <item
+        android:id="@+id/ic_person"
+        android:icon="@drawable/ic_person"
+        android:title="Perfil"/>
+</menu>
