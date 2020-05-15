@@ -1,4 +1,38 @@
 <resources>
     <string name="app_name">Get_Job</string>
     <string name="texto_inicio">Get Job es la aplicacion movil #1 de Ofertas Laborales.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="sp_fecha_publicacion">
+        <item>Reciente</item>
+        <item>Una semana anterior</item>
+        <item>Un mes anterior</item>
+
+    </string-array>
+
+    <string-array name="sp_tipo_empleo">
+        <item>Completa</item>
+        <item>Parcial</item>
+        <item>Pasante</item>
+
+    </string-array>
+
+    <string-array name="sp_ordenar">
+        <item>Más relevantes</item>
+        <item>Fecha</item>
+        <item>Mes</item>
+    </string-array>
+
+    <string-array name="sp_funcion_laboral">
+        <item>Ventas</item>
+        <item>Gerencia</item>
+        <item>Gestion</item>
+        <item>Ingenieria</item>
+        <item>Educacion</item>
+        <item>Otro</item>
+
+    </string-array>
+
 </resources>

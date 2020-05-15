@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pantalla_3">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:menu="@menu/menu_usuario" />
+
+    <TextView
+        android:id="@+id/tv_fecha_publicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:text="Fecha de publicación:" />
+
+    <Spinner
+        android:id="@+id/sp_fecha_publicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp" />
+
+
+    <TextView
+        android:id="@+id/tv_tipo_empleo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_fecha_publicacion"
+        android:layout_marginTop="16dp"
+        android:text="Tipo de empleo" />
+
+    <Spinner
+        android:id="@+id/sp_tipo_empleo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sp_fecha_publicacion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tv_ubicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_tipo_empleo"
+        android:layout_marginTop="35dp"
+        android:text="Ubicacion:" />
+
+    <Button
+        android:id="@+id/btn_ubicacion"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/sp_tipo_empleo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:text="Buscar" />
+
+    <TextView
+        android:id="@+id/tv_ordenar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_ubicacion"
+        android:layout_marginTop="25dp"
+        android:text="Ordenar" />
+
+    <Spinner
+        android:id="@+id/sp_ordenar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_ubicacion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tv_funcion_laboral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_ordenar"
+        android:layout_marginTop="25dp"
+        android:text="Función laboral" />
+
+    <Spinner
+        android:id="@+id/sp_funcion_laboral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sp_ordenar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp" />
+
+
+</RelativeLayout>
