@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/pantalla_4">
+    <fragment
+        android:id="@+id/pantalla_4"
+        android:name="com.edenilson.get_job.pantalla_4"
+        android:label="fragment_pantalla_4"
+        tools:layout="@layout/fragment_pantalla_4" >
+        <action
+            android:id="@+id/action_pantalla_4_to_pantalla_5"
+            app:destination="@id/pantalla_5" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_5"
+        android:name="com.edenilson.get_job.pantalla_5"
+        android:label="fragment_pantalla_5"
+        tools:layout="@layout/fragment_pantalla_5" />
+</navigation>

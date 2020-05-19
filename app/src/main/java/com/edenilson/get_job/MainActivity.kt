@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pantalla_11)
+        setContentView(R.layout.activity_main)
 
 //  Spinner de fecha de publicacion
         // access the items of the list
