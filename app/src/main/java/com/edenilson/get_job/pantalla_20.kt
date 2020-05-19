@@ -1,12 +1,28 @@
 package com.edenilson.get_job
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.edenilson.get_job.databinding.FragmentPantalla20Binding
 
-class pantalla_20 : AppCompatActivity() {
+/**
+ * A simple [Fragment] subclass.
+ */
+class pantalla_20 : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pantalla_20)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val binding = DataBindingUtil.inflate<FragmentPantalla20Binding>(
+            inflater, R.layout.fragment_pantalla_20
+            , container, false)
+
+        return binding.root
     }
+
 }

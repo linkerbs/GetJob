@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.edenilson.get_job.databinding.FragmentPantalla5Binding
 
 /**
@@ -20,8 +21,25 @@ class pantalla_5 : Fragment() {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentPantalla5Binding>(
             inflater, R.layout.fragment_pantalla_5
-            , container, false)
+            , container, false
+        )
+
+        binding.tvVerMas.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_6)
+        }
+
+        binding.button.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_7)
+        }
+
+        binding.button2.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_7)
+        }
+
+
         return binding.root
+
+
     }
 
 }

@@ -17,5 +17,55 @@
         android:id="@+id/pantalla_5"
         android:name="com.edenilson.get_job.pantalla_5"
         android:label="fragment_pantalla_5"
-        tools:layout="@layout/fragment_pantalla_5" />
+        tools:layout="@layout/fragment_pantalla_5" >
+        <action
+            android:id="@+id/action_pantalla_5_to_pantalla_6"
+            app:destination="@id/pantalla_6" />
+        <action
+            android:id="@+id/action_pantalla_5_to_pantalla_7"
+            app:destination="@id/pantalla_7" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_6"
+        android:name="com.edenilson.get_job.pantalla_6"
+        android:label="fragment_pantalla_6"
+        tools:layout="@layout/fragment_pantalla_6" />
+    <fragment
+        android:id="@+id/pantalla_7"
+        android:name="com.edenilson.get_job.pantalla_7"
+        android:label="fragment_pantalla_7"
+        tools:layout="@layout/fragment_pantalla_7" >
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_8"
+            app:destination="@id/pantalla_8" />
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_9"
+            app:destination="@id/pantalla_9" />
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_10"
+            app:destination="@id/pantalla_10" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_8"
+        android:name="com.edenilson.get_job.pantalla_8"
+        android:label="fragment_pantalla_8"
+        tools:layout="@layout/fragment_pantalla_8" >
+        <action
+            android:id="@+id/action_pantalla_8_to_pantalla_10"
+            app:destination="@id/pantalla_10" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_9"
+        android:name="com.edenilson.get_job.pantalla_9"
+        android:label="fragment_pantalla_9"
+        tools:layout="@layout/fragment_pantalla_9" >
+        <action
+            android:id="@+id/action_pantalla_9_to_pantalla_10"
+            app:destination="@id/pantalla_10" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_10"
+        android:name="com.edenilson.get_job.pantalla_10"
+        android:label="fragment_pantalla_10"
+        tools:layout="@layout/fragment_pantalla_10" />
 </navigation>

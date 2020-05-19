@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/ic_recorder"
+        android:id="@+id/fragment_pantalla_11"
         android:icon="@drawable/ic_recorder"
         android:title="Mis Ofertas" />
     <item
-        android:id="@+id/ic_supervisor_account"
+        android:id="@+id/pantalla_12"
         android:icon="@drawable/ic_supervisor_account"
         android:title="Solicitudes"/>
     <item
-        android:id="@+id/ic_add_circle"
+        android:id="@+id/pantalla_13"
         android:icon="@drawable/ic_add_circle"
         android:title="Publicar Oferta"/>
     <item
-        android:id="@+id/ic_chats"
+        android:id="@+id/pantalla_14"
         android:icon="@drawable/ic_chats"
         android:title="Chats"/>
     <item
-        android:id="@+id/ic_person"
+        android:id="@+id/pantalla_19"
         android:icon="@drawable/ic_person"
         android:title="Perfil"/>
 </menu>
