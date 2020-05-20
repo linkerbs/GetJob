@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_navigation"
+    app:startDestination="@id/fragment_pantalla_11">
+    <fragment
+        android:id="@+id/pantalla_12"
+        android:name="com.edenilson.get_job.pantalla_12"
+        android:label="fragment_pantalla_12"
+        tools:layout="@layout/fragment_pantalla_12" >
+        <action
+            android:id="@+id/action_pantalla_12_to_pantalla_18"
+            app:destination="@id/pantalla_18" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_13"
+        android:name="com.edenilson.get_job.pantalla_13"
+        android:label="fragment_pantalla_13"
+        tools:layout="@layout/fragment_pantalla_13" >
+        <action
+            android:id="@+id/action_pantalla_13_to_pantalla_18"
+            app:destination="@id/pantalla_18" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_18"
+        android:name="com.edenilson.get_job.pantalla_18"
+        android:label="fragment_pantalla_18"
+        tools:layout="@layout/fragment_pantalla_18" />
+    <fragment
+        android:id="@+id/fragment_pantalla_11"
+        android:name="com.edenilson.get_job.pantalla_11"
+        android:label="fragment_pantalla_11"
+        tools:layout="@layout/fragment_pantalla_11" >
+        <action
+            android:id="@+id/action_fragment_pantalla_11_to_pantalla_18"
+            app:destination="@id/pantalla_18" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_16"
+        android:name="com.edenilson.get_job.pantalla_16"
+        android:label="fragment_pantalla_17"
+        tools:layout="@layout/fragment_pantalla_17" />
+    <fragment
+        android:id="@+id/pantalla_152"
+        android:name="com.edenilson.get_job.pantalla_15"
+        android:label="fragment_pantalla_15"
+        tools:layout="@layout/fragment_pantalla_15" >
+        <action
+            android:id="@+id/action_pantalla_152_to_pantalla_14"
+            app:destination="@id/pantalla_14" />
+        <action
+            android:id="@+id/action_pantalla_152_to_pantalla_18"
+            app:destination="@id/pantalla_18" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_14"
+        android:name="com.edenilson.get_job.pantalla_14"
+        android:label="fragment_pantalla_14"
+        tools:layout="@layout/fragment_pantalla_14" />
+</navigation>

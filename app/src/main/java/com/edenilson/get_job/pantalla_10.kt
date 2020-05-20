@@ -1,11 +1,12 @@
 package com.edenilson.get_job
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.edenilson.get_job.databinding.FragmentPantalla10Binding
 
 /**
@@ -22,6 +23,10 @@ class pantalla_10 : Fragment() {
             inflater, R.layout.fragment_pantalla_10
             , container, false)
 
+        binding.btIniciarSesionEntrar.setOnClickListener {view: View ->
+            val intent = Intent(activity, CompanyActivity::class.java)
+            activity!!.startActivity(intent)
+        }
         return binding.root
     }
 

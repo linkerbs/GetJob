@@ -14,11 +14,11 @@
         android:icon="@drawable/ic_add_circle"
         android:title="Publicar Oferta"/>
     <item
-        android:id="@+id/pantalla_14"
+        android:id="@+id/pantalla_152"
         android:icon="@drawable/ic_chats"
         android:title="Chats"/>
     <item
-        android:id="@+id/pantalla_19"
+        android:id="@+id/pantalla_16"
         android:icon="@drawable/ic_person"
         android:title="Perfil"/>
 </menu>
