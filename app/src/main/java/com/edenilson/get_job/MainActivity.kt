@@ -6,6 +6,8 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +17,9 @@ class MainActivity : AppCompatActivity() {
 
         val NavController = this.findNavController(R.id.MyNavHostFragment1)
         NavigationUI.setupActionBarWithNavController(this, NavController)
+
+        findViewById<BottomNavigationView>(R.id.bottomNav)
+            .setupWithNavController(NavController)
 
 //  Spinner de fecha de publicacion
         // access the items of the list

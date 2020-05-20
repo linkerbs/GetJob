@@ -27,6 +27,11 @@ class pantalla_10 : Fragment() {
             val intent = Intent(activity, CompanyActivity::class.java)
             activity!!.startActivity(intent)
         }
+
+        binding.btIniciarSesionEntrar2.setOnClickListener {view: View ->
+            val intent = Intent(activity, UserActivity::class.java)
+            activity!!.startActivity(intent)
+        }
         return binding.root
     }
 

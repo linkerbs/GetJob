@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_4"
         android:icon="@drawable/ic_home"
         android:title="Inicio"/>
     <item
