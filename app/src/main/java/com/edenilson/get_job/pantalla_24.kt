@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_pantalla_4.*
 /**
  * A simple [Fragment] subclass.
  */
-class pantalla_4 : Fragment() {
+class pantalla_24 : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,16 +27,17 @@ class pantalla_4 : Fragment() {
             , container, false)
 
         binding.btnOferta.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_4_to_pantalla_5)
+            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_53)
         }
         binding.btnFILTRO.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_4_to_pantalla_3)
+            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_34)
 
         }
         binding.btnNotificacion.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_4_to_pantalla_222)
+            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_224)
 
         }
+
         return binding.root
     }
 

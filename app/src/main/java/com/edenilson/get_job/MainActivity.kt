@@ -4,12 +4,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pantalla_11)
+        setContentView(R.layout.activity_main)
+
+        val NavController = this.findNavController(R.id.MyNavHostFragment1)
+        NavigationUI.setupActionBarWithNavController(this, NavController)
+
+        findViewById<BottomNavigationView>(R.id.bottomNav)
+            .setupWithNavController(NavController)
 
 //  Spinner de fecha de publicacion
         // access the items of the list
@@ -69,5 +79,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val NavController = this.findNavController(R.id.MyNavHostFragment1)
+        return NavController.navigateUp()
     }
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/pantalla_4">
+    <fragment
+        android:id="@+id/pantalla_4"
+        android:name="com.edenilson.get_job.pantalla_4"
+        android:label="fragment_pantalla_4"
+        tools:layout="@layout/fragment_pantalla_4" >
+        <action
+            android:id="@+id/action_pantalla_4_to_pantalla_5"
+            app:destination="@id/pantalla_5" />
+        <action
+            android:id="@+id/action_pantalla_4_to_pantalla_3"
+            app:destination="@id/pantalla_3" />
+        <action
+            android:id="@+id/action_pantalla_4_to_pantalla_222"
+            app:destination="@id/pantalla_222" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_5"
+        android:name="com.edenilson.get_job.pantalla_5"
+        android:label="fragment_pantalla_5"
+        tools:layout="@layout/fragment_pantalla_5" >
+        <action
+            android:id="@+id/action_pantalla_5_to_pantalla_6"
+            app:destination="@id/pantalla_6" />
+        <action
+            android:id="@+id/action_pantalla_5_to_pantalla_7"
+            app:destination="@id/pantalla_7" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_6"
+        android:name="com.edenilson.get_job.pantalla_6"
+        android:label="fragment_pantalla_6"
+        tools:layout="@layout/fragment_pantalla_6" />
+    <fragment
+        android:id="@+id/pantalla_7"
+        android:name="com.edenilson.get_job.pantalla_7"
+        android:label="fragment_pantalla_7"
+        tools:layout="@layout/fragment_pantalla_7" >
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_8"
+            app:destination="@id/pantalla_8" />
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_9"
+            app:destination="@id/pantalla_9" />
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_10"
+            app:destination="@id/pantalla_10" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_8"
+        android:name="com.edenilson.get_job.pantalla_8"
+        android:label="fragment_pantalla_8"
+        tools:layout="@layout/fragment_pantalla_8" >
+        <action
+            android:id="@+id/action_pantalla_8_to_pantalla_10"
+            app:destination="@id/pantalla_10" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_9"
+        android:name="com.edenilson.get_job.pantalla_9"
+        android:label="fragment_pantalla_9"
+        tools:layout="@layout/fragment_pantalla_9" >
+        <action
+            android:id="@+id/action_pantalla_9_to_pantalla_10"
+            app:destination="@id/pantalla_10" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_10"
+        android:name="com.edenilson.get_job.pantalla_10"
+        android:label="fragment_pantalla_10"
+        tools:layout="@layout/fragment_pantalla_10" />
+    <fragment
+        android:id="@+id/pantalla_3"
+        android:name="com.edenilson.get_job.pantalla_3"
+        android:label="fragment_pantalla_3"
+        tools:layout="@layout/fragment_pantalla_3" />
+    <fragment
+        android:id="@+id/pantalla_222"
+        android:name="com.edenilson.get_job.pantalla_22"
+        android:label="fragment_pantalla_22"
+        tools:layout="@layout/fragment_pantalla_22" />
+</navigation>

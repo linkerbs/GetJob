@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".pantalla_5">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        app:menu="@menu/menu_usuario" />
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -62,7 +56,7 @@
             android:layout_height="wrap_content"
 
 
-            android:src="@drawable/ic_image_black"
+            app:srcCompat="@drawable/ic_image_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +68,7 @@
 
             android:layout_width="83dp"
             android:layout_height="72dp"
-            android:src="@drawable/ic_person_black"
+            app:srcCompat="@drawable/ic_person_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.093"
@@ -155,3 +149,4 @@
 
 
 </RelativeLayout>
+</layout>

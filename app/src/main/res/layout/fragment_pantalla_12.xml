@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".pantalla_12">
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pantalla_12">
+    >
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        app:menu="@menu/menu_empresa" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.029" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/btn_notificacion"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -61,7 +56,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_buscar_oferta" />
 
-        <EditText
+        <Button
+            android:id="@+id/btnFILTROEMPRESA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/et_buscar_oferta"
@@ -78,3 +74,4 @@
 
 
 </RelativeLayout>
+</layout>
