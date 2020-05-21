@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.edenilson.get_job.databinding.FragmentPantalla16Binding
 
 /**
@@ -21,6 +22,10 @@ class pantalla_16 : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentPantalla16Binding>(
             inflater, R.layout.fragment_pantalla_16
             , container, false)
+        binding.editText6.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_16_to_pantalla_17)
+
+        }
 
         return binding.root
     }

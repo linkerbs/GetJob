@@ -29,6 +29,14 @@ class pantalla_4 : Fragment() {
         binding.btnOferta.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_pantalla_4_to_pantalla_5)
         }
+        binding.btnFILTRO.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_4_to_pantalla_3)
+
+        }
+        binding.btnNotificacion.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_4_to_pantalla_222)
+
+        }
         return binding.root
     }
 

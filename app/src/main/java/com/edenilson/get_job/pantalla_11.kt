@@ -24,7 +24,10 @@ class pantalla_11 : Fragment() {
             inflater, R.layout.fragment_pantalla_11
             , container, false)
 
+        binding.btnNotificacion.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_18)
 
+        }
       //  setHasOptionsMenu(true)
         return binding.root
 

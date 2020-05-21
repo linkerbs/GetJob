@@ -23,12 +23,12 @@ class pantalla_10 : Fragment() {
             inflater, R.layout.fragment_pantalla_10
             , container, false)
 
-        binding.btIniciarSesionEntrar.setOnClickListener {view: View ->
+        binding.btIniciarSesionEntrar.setOnClickListener { view: View ->
             val intent = Intent(activity, CompanyActivity::class.java)
             activity!!.startActivity(intent)
         }
 
-        binding.btIniciarSesionEntrar2.setOnClickListener {view: View ->
+        binding.btIniciarSesionEntrar2.setOnClickListener { view: View ->
             val intent = Intent(activity, UserActivity::class.java)
             activity!!.startActivity(intent)
         }

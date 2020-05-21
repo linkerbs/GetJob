@@ -14,7 +14,14 @@
         android:id="@+id/pantalla_7"
         android:name="com.edenilson.get_job.pantalla_20"
         android:label="fragment_pantalla_20"
-        tools:layout="@layout/fragment_pantalla_20" />
+        tools:layout="@layout/fragment_pantalla_20" >
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_21"
+            app:destination="@id/pantalla_21" />
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_22"
+            app:destination="@id/pantalla_22" />
+    </fragment>
     <fragment
         android:id="@+id/pantalla_21"
         android:name="com.edenilson.get_job.pantalla_21"
@@ -29,9 +36,32 @@
         android:id="@+id/pantalla_7"
         android:name="com.edenilson.get_job.pantalla_23"
         android:label="fragment_pantalla_23"
-        tools:layout="@layout/fragment_pantalla_23" />
+        tools:layout="@layout/fragment_pantalla_23" >
+        <action
+            android:id="@+id/action_pantalla_7_to_pantalla_223"
+            app:destination="@id/pantalla_22" />
+    </fragment>
     <fragment
         android:id="@+id/pantalla_7"
         android:name="com.edenilson.get_job.pantalla_24"
-        android:label="pantalla_24" />
+        android:label="pantalla_24" >
+        <action
+            android:id="@+id/action_pantalla_24_to_pantalla_224"
+            app:destination="@id/pantalla_22" />
+        <action
+            android:id="@+id/action_pantalla_24_to_pantalla_34"
+            app:destination="@id/pantalla_34" />
+        <action
+            android:id="@+id/action_pantalla_24_to_pantalla_53"
+            app:destination="@id/pantalla_53" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantalla_34"
+        android:name="com.edenilson.get_job.pantalla_3"
+        android:label="fragment_pantalla_3"
+        tools:layout="@layout/fragment_pantalla_3" />
+    <fragment
+        android:id="@+id/pantalla_53"
+        android:name="com.edenilson.get_job.pantalla_5"
+        android:label="pantalla_5" />
 </navigation>

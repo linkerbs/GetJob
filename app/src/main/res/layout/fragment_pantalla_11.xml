@@ -20,6 +20,10 @@
                 android:layout_width="324dp"
                 android:layout_height="55dp"
                 android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:layout_toLeftOf="@+id/btn_notificacion"
                 android:drawableLeft="@android:drawable/ic_menu_search"
                 android:hint="Buscar oferta laboral"
@@ -28,9 +32,9 @@
                 app:layout_constraintHorizontal_bias="0.183"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.029" />
+                app:layout_constraintVertical_bias="0.0" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/btn_notificacion"
                 android:layout_width="50dp"
                 android:layout_height="50dp"

@@ -19,7 +19,7 @@
         android:drawableLeft="@android:drawable/ic_menu_search"
         android:hint="Buscar oferta laboral" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/btn_notificacion"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -28,7 +28,8 @@
         android:layout_marginEnd="0dp"
         app:srcCompat="@drawable/ic_notifications_black" />
 
-    <EditText
+    <Button
+        android:id="@+id/btnFILTRO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/et_buscar_oferta"
