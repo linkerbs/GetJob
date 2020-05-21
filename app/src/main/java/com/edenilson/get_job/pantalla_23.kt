@@ -25,7 +25,7 @@ class pantalla_23 : Fragment() {
         )
 
      binding.btnNotificacion.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_7_to_pantalla_22)
+            view.findNavController().navigate(R.id.action_pantalla_23_to_pantalla_223)
         }
 
         return binding.root

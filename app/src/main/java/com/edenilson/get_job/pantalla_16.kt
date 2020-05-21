@@ -23,7 +23,7 @@ class pantalla_16 : Fragment() {
             inflater, R.layout.fragment_pantalla_16
             , container, false)
         binding.editText6.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_16_to_pantalla_17)
+            //view.findNavController().navigate(R.id.action_pantalla_17_to_pantalla_192)
 
         }
 

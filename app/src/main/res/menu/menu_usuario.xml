@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_24"
         android:icon="@drawable/ic_home"
         android:title="Inicio"/>
     <item
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_23"
         android:icon="@drawable/ic_work"
         android:title="Ofertas"/>
     <item
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_20"
         android:icon="@drawable/ic_chats"
         android:title="Chats"/>
     <item
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_19"
         android:icon="@drawable/ic_person"
         android:title="Perfil"/>
 

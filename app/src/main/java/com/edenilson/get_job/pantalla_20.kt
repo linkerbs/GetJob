@@ -24,13 +24,13 @@ class pantalla_20 : Fragment() {
             , container, false)
 
         binding.btnNotificacion.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_7_to_pantalla_22)
+            view.findNavController().navigate(R.id.action_pantalla_20_to_pantalla_22)
         }
         binding.chatEmpresa1.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_7_to_pantalla_21)
+            view.findNavController().navigate(R.id.action_pantalla_20_to_pantalla_21)
         }
         binding.chatEmpresa2.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_7_to_pantalla_21)
+            view.findNavController().navigate(R.id.action_pantalla_20_to_pantalla_21)
         }
 
         return binding.root

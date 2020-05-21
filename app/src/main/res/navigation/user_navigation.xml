@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/user_navigation"
-    app:startDestination="@id/pantalla_7">
+    app:startDestination="@id/pantalla_24">
 
     <fragment
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_19"
         android:name="com.edenilson.get_job.pantalla_19"
         android:label="fragment_pantalla_19"
         tools:layout="@layout/fragment_pantalla_19" />
     <fragment
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_20"
         android:name="com.edenilson.get_job.pantalla_20"
         android:label="fragment_pantalla_20"
         tools:layout="@layout/fragment_pantalla_20" >
         <action
-            android:id="@+id/action_pantalla_7_to_pantalla_21"
+            android:id="@+id/action_pantalla_20_to_pantalla_21"
             app:destination="@id/pantalla_21" />
         <action
-            android:id="@+id/action_pantalla_7_to_pantalla_22"
+            android:id="@+id/action_pantalla_20_to_pantalla_22"
             app:destination="@id/pantalla_22" />
     </fragment>
     <fragment
@@ -33,16 +33,16 @@
         android:label="fragment_pantalla_22"
         tools:layout="@layout/fragment_pantalla_22" />
     <fragment
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_23"
         android:name="com.edenilson.get_job.pantalla_23"
         android:label="fragment_pantalla_23"
         tools:layout="@layout/fragment_pantalla_23" >
         <action
-            android:id="@+id/action_pantalla_7_to_pantalla_223"
+            android:id="@+id/action_pantalla_23_to_pantalla_223"
             app:destination="@id/pantalla_22" />
     </fragment>
     <fragment
-        android:id="@+id/pantalla_7"
+        android:id="@+id/pantalla_24"
         android:name="com.edenilson.get_job.pantalla_24"
         android:label="pantalla_24" >
         <action
