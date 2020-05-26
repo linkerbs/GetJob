@@ -5,14 +5,12 @@
     tools:context=".pantalla_9">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/margin_view"
         android:layout_marginTop="@dimen/margin_view"
         android:layout_marginEnd="@dimen/margin_view">
-
 
 
         <com.google.android.material.textview.MaterialTextView
@@ -23,21 +21,20 @@
             android:text="Crea una cuenta para encontrar las mejores ofertas laborales"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029999971" />
+            app:layout_constraintVertical_bias="0.003" />
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_nombre_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_width="224dp"
+            android:layout_height="59dp"
             android:ems="10"
             android:hint="Nombres"
             android:inputType="textPersonName"
             app:endIconMode="clear_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
@@ -54,16 +51,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_apellido_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_width="265dp"
+            android:layout_height="56dp"
             android:ems="10"
             android:hint="Apellidos"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/et_nombre_usuario"
-            app:layout_constraintTop_toBottomOf="@+id/et_nombre_usuario">
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <com.google.android.material.textfield.TextInputEditText
 
@@ -80,11 +74,12 @@
             android:id="@+id/et_correo_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_apellido_usuario">
 
@@ -102,16 +97,17 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_contra_usuario"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
 
+            android:layout_marginTop="8dp"
             android:hint="Contraseña"
             app:endIconMode="password_toggle"
             app:helperText="al menos 8 caracteres"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_correo_usuario">
+            app:layout_constraintTop_toBottomOf="@+id/et_correo_usuario"
+            app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.textfield.TextInputEditText
 
@@ -123,25 +119,20 @@
 
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_contra_again_usuario"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
 
+            android:layout_marginTop="8dp"
             android:hint="Contraseña de nuevo"
             app:endIconMode="password_toggle"
             app:helperText="al menos 8 caracteres"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_contra_usuario"
-            app:layout_constraintVertical_bias="0.096">
+            app:layout_constraintTop_toBottomOf="@+id/et_correo_usuario"
+            app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.textfield.TextInputEditText
 
@@ -154,28 +145,30 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <Button
             android:id="@+id/bt_registro_usuario"
-            android:layout_width="157dp"
-            android:layout_height="44dp"
+            android:layout_width="191dp"
+            android:layout_height="41dp"
             android:text="REGISTRARME"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_contra_again_usuario"
-            app:layout_constraintVertical_bias="0.578" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.995" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="58dp" />
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="58dp" />
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </layout>

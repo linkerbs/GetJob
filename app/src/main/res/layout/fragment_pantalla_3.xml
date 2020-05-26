@@ -93,3 +93,136 @@
 
 </RelativeLayout>
 </layout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_view"
+        android:layout_marginTop="@dimen/margin_view"
+        android:layout_marginEnd="@dimen/margin_view">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_fecha_publicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Fecha de publicación:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/sp_fecha_publicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_fecha_publicacion"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_tipo_empleo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_view"
+
+
+            android:text="Tipo de empleo"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fecha_publicacion" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/sp_tipo_empleo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_view"
+
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_tipo_empleo"
+            app:layout_constraintTop_toBottomOf="@+id/sp_fecha_publicacion" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_ubicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Ubicacion:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tipo_empleo" />
+
+        <Button
+
+            android:id="@+id/btn_ubicacion"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/sp_tipo_empleo"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:text="Buscar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_ubicacion"
+            app:layout_constraintTop_toBottomOf="@+id/sp_tipo_empleo" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_ordenar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Ordenar:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ubicacion" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/sp_ordenar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/margin_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_ordenar"
+            app:layout_constraintTop_toBottomOf="@+id/btn_ubicacion" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_funcion_laboral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_view"
+            android:text="Función laboral:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ordenar" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/sp_funcion_laboral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_funcion_laboral"
+            app:layout_constraintTop_toBottomOf="@+id/sp_ordenar" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="58dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+

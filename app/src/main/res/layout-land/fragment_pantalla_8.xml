@@ -2,8 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".pantalla_9">
-
+    tools:context=".pantalla_8">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,157 +13,113 @@
         android:layout_marginEnd="@dimen/margin_view">
 
 
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Crea una cuenta para encontrar las mejores ofertas laborales"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            android:text="Crea una cuenta para encontrar los mejores profesionales"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029999971" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_nombre_usuario"
+            android:id="@+id/et_nombre_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="Nombres"
+            android:hint="Nombre de la empresa"
             android:inputType="textPersonName"
-            app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <com.google.android.material.textfield.TextInputEditText
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-
-                />
-
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_apellido_usuario"
+            android:id="@+id/et_correo_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="Apellidos"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/et_nombre_usuario"
-            app:layout_constraintTop_toBottomOf="@+id/et_nombre_usuario">
-
-            <com.google.android.material.textfield.TextInputEditText
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_correo_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_apellido_usuario">
+            app:layout_constraintTop_toBottomOf="@+id/et_nombre_empresa">
 
             <com.google.android.material.textfield.TextInputEditText
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-
-                />
-
-
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_contra_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-
+            android:id="@+id/et_contra_empresa"
+            android:layout_width="250dp"
+            android:layout_height="62dp"
+            android:ems="10"
             android:hint="Contraseña"
-            app:endIconMode="password_toggle"
-            app:helperText="al menos 8 caracteres"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_correo_usuario">
-
-            <com.google.android.material.textfield.TextInputEditText
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-
-                />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_contra_again_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:hint="Contraseña de nuevo"
+            android:inputType="textPassword"
             app:endIconMode="password_toggle"
             app:helperText="al menos 8 caracteres"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_contra_usuario"
-            app:layout_constraintVertical_bias="0.096">
+            app:layout_constraintTop_toBottomOf="@+id/et_correo_empresa"
+            app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.textfield.TextInputEditText
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_contra_again_empresa"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="Contraseña de nuevo"
+            android:inputType="textPassword"
+            app:endIconMode="password_toggle"
+            app:helperText="al menos 8 caracteres"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/et_contra_empresa"
+            app:layout_constraintTop_toBottomOf="@+id/et_correo_empresa"
+            app:layout_constraintVertical_bias="0.0">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button
-            android:id="@+id/bt_registro_usuario"
-            android:layout_width="157dp"
-            android:layout_height="44dp"
+            android:id="@+id/bt_registro_empresa"
+            android:layout_width="156dp"
+            android:layout_height="48dp"
             android:text="REGISTRARME"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_contra_again_usuario"
-            app:layout_constraintVertical_bias="0.578" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -175,7 +130,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </layout>

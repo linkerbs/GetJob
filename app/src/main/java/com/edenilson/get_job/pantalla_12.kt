@@ -23,9 +23,11 @@ class pantalla_12 : Fragment() {
             inflater, R.layout.fragment_pantalla_12
             , container, false)
 
-        binding.btnFILTROEMPRESA.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_pantalla_12_to_pantalla_32)
-        }
+
+//        binding.btnFILTROEMPRESA.setOnClickListener { view : View ->
+//            view.findNavController().navigate(R.id.action_pantalla_12_to_pantalla_32)
+//        }
+
 
         binding.btnNotificacion.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_pantalla_12_to_pantalla_182)
