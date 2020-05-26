@@ -5,9 +5,6 @@
     tools:context=".pantalla_15">
 
 
-
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,8 +50,6 @@
 
 
 
-
-
         <ImageButton
             android:id="@+id/btn_notificacion"
             android:layout_width="50dp"
@@ -75,8 +70,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+
             android:text="Notificaciones del Chat"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +92,9 @@
             app:layout_constraintBottom_toTopOf="@+id/notiEmpresa2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/et_buscar_mensaje_empresa" />
+
 
         <Button
             android:id="@+id/notiEmpresa2"
@@ -111,12 +110,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/notiEmpresa1" />
 
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_end="56dp" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

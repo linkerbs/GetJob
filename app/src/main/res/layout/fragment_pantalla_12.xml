@@ -6,7 +6,6 @@
 
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/todo"
         android:layout_width="match_parent"
@@ -30,6 +29,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+
             <com.google.android.material.textfield.TextInputEditText
 
                 android:layout_width="match_parent"
@@ -39,6 +39,7 @@
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
 
         <ImageButton
@@ -65,8 +66,10 @@
             app:layout_constraintTop_toBottomOf="@+id/et_buscar_oferta" />
 
 
+
         <Button
             android:id="@+id/btn_oferta_laboral_empresa"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -92,8 +95,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 

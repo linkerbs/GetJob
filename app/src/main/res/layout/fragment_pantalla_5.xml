@@ -46,6 +46,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/tv_nombre_pais2" />
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -54,6 +55,7 @@
             android:layout_height="100dp"
             android:background="#68708A"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -63,11 +65,13 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/imageView3"
+
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
