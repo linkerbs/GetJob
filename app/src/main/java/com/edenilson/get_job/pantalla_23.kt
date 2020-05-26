@@ -28,6 +28,7 @@ class pantalla_23 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_23_to_pantalla_223)
         }
 
+        (activity as UserActivity).supportActionBar?.title = ("Solicitudes enviadas")
         return binding.root
     }
 

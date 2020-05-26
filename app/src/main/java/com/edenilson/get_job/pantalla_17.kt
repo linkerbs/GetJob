@@ -22,6 +22,7 @@ class pantalla_17 : Fragment() {
             inflater, R.layout.fragment_pantalla_17
             , container, false)
 
+        (activity as CompanyActivity).supportActionBar?.title = ("Editar Perfil")
         return binding.root
     }
 

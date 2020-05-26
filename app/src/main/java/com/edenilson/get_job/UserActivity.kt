@@ -13,8 +13,13 @@ class UserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         val NavController = this.findNavController(R.id.MyNavHostFragment3)
         NavigationUI.setupActionBarWithNavController(this, NavController)
+
+
 
        findViewById<BottomNavigationView>(R.id.bottomNav)
            .setupWithNavController(NavController)

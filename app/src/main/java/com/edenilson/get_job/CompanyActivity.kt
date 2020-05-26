@@ -12,6 +12,8 @@ class CompanyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_company)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val NavController = this.findNavController(R.id.MyNavHostFragment2)
         NavigationUI.setupActionBarWithNavController(this, NavController)

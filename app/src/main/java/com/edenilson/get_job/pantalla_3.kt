@@ -9,14 +9,13 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.edenilson.get_job.databinding.FragmentPantalla3Binding
 
 /**
  * A simple [Fragment] subclass.
  */
 class pantalla_3 : Fragment() {
-
-
-
 
 
     override fun onCreateView(
@@ -26,18 +25,14 @@ class pantalla_3 : Fragment() {
 
     ): View? {
 
+        val binding = DataBindingUtil.inflate<FragmentPantalla3Binding>(
+            inflater, R.layout.fragment_pantalla_3
+            , container, false)
 
-
-
-
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pantalla_3, container, false)
-
+      //  (activity as MainActivity).supportActionBar?.title = ("Eliga los filtros")
+        return binding.root
 
     }
-
-
 
 
 }

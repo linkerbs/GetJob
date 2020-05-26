@@ -37,7 +37,10 @@ class pantalla_4 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_4_to_pantalla_222)
 
         }
+        (activity as MainActivity).supportActionBar?.title = ("Get Job")
         return binding.root
+
+
     }
 
 }

@@ -26,7 +26,7 @@ class pantalla_9 : Fragment() {
         binding.btRegistroUsuario.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_pantalla_9_to_pantalla_10)
         }
-
+        (activity as MainActivity).supportActionBar?.title = ("Registro")
         return binding.root
     }
 

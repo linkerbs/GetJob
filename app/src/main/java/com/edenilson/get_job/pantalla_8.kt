@@ -27,6 +27,7 @@ class pantalla_8 : Fragment() {
         binding.btRegistroEmpresa.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_pantalla_8_to_pantalla_10)
         }
+        (activity as MainActivity).supportActionBar?.title = ("Registro empresa")
         return binding.root
     }
 
