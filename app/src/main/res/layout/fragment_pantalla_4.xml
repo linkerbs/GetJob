@@ -3,62 +3,103 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".pantalla_4">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
 
 
 
-    <EditText
-        android:id="@+id/et_buscar_oferta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/btn_notificacion"
-        android:drawableLeft="@android:drawable/ic_menu_search"
-        android:hint="Buscar oferta laboral" />
-
-    <ImageButton
-        android:id="@+id/btn_notificacion"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-
-        android:layout_marginEnd="0dp"
-        app:srcCompat="@drawable/ic_notifications_black" />
-
-    <Button
-        android:id="@+id/btnFILTRO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/et_buscar_oferta"
-        android:drawableLeft="@drawable/ic_filtro"
-        android:text="Filtros" />
-
-    <Switch
-        android:layout_marginTop="16dp"
-        android:id="@+id/switch_experiencia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_notificacion"
-        android:layout_alignParentEnd="true"
-        android:text="Experiencia" />
-
-    <Button
-        android:id="@+id/btnOferta"
-        android:layout_width="122dp"
-        android:layout_height="96dp"
-        android:layout_above="@+id/bottomNav"
-        android:layout_below="@+id/et_buscar_oferta"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="167dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="230dp"
-        android:text="Futuro boton de ofertas" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_view"
+        android:layout_marginTop="@dimen/margin_view"
+        android:layout_marginEnd="@dimen/margin_view">
 
 
-</RelativeLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_buscar_oferta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/btn_notificacion"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:hint="Buscar oferta laboral"
+            app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageButton
+            android:id="@+id/btn_notificacion"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_notifications_black" />
+
+        <Button
+            android:id="@+id/btnFILTRO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/margin_view"
+            android:drawableLeft="@drawable/ic_drag_handle_black"
+            android:text="Filtros"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_buscar_oferta" />
+
+
+        <Switch
+            android:id="@+id/switch_experiencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="24dp"
+            android:text="Experiencia"
+            app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/btnFILTRO"
+            app:layout_constraintTop_toBottomOf="@+id/et_buscar_oferta" />
+
+
+        <Button
+            android:id="@+id/btnOferta"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/bottomNav"
+
+
+            android:text="Futuro boton de ofertas"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFILTRO" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/margin_end_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="73dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="56dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

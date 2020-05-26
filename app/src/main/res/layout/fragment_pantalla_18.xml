@@ -4,28 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".pantalla_18">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/todo"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="1dp">
+            android:layout_marginStart="@dimen/margin_view"
+            android:layout_marginEnd="@dimen/margin_view"
+            android:layout_marginTop="@dimen/margin_view"
+            >
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_height="wrap_content"
+
                 android:gravity="center"
                 android:text="Notificaciones"
+                android:textStyle="bold"
+
                 app:layout_constraintBottom_toTopOf="@+id/btn_notificacion"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -39,7 +39,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentEnd="true"
 
-                android:layout_marginEnd="@dimen/margin_wide"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.714"
@@ -65,8 +65,17 @@
                 tools:ignore="MissingConstraints" />
 
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="56dp" />
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </RelativeLayout>
+
 </layout>

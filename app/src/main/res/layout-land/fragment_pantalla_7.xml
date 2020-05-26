@@ -9,7 +9,6 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/margin_view"
@@ -17,89 +16,85 @@
             android:layout_marginEnd="@dimen/margin_view">
 
 
-
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="86dp"
                 android:layout_height="77dp"
-
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-
+                app:srcCompat="@drawable/ic_image_black" />
 
             <Button
                 android:id="@+id/bt_login_usuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="44dp"
                 android:text="¿Buscas trabajo?"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.085"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-
-            <TextView
-                android:id="@+id/tv_login_usuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="@dimen/margin_wide"
-                android:text="¡Las mejores ofertas laborales te estan esperando!"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bt_login_usuario" />
-
 
             <Button
                 android:id="@+id/bt_login_empresa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="44dp"
                 android:text="¿Eres una empresa?"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.518"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_login_usuario" />
-
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
             <TextView
                 android:id="@+id/tv_login_empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+                android:layout_width="170dp"
+                android:layout_height="57dp"
                 android:layout_marginTop="16dp"
+                android:gravity="center"
                 android:text="Dejanos ayudarte a encontrar los mejores profesionales."
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.519"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bt_login_empresa" />
 
+            <TextView
+                android:id="@+id/tv_login_usuario"
+                android:layout_width="158dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="¡Las mejores ofertas laborales te estan esperando!"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_login_usuario" />
 
             <Button
                 android:id="@+id/bt_iniciar_sesion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="44dp"
                 android:text="Iniciar sesión"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.91"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_login_empresa" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
 
             <TextView
                 android:id="@+id/tv_iniciar_sesion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+                android:layout_width="123dp"
+                android:layout_height="22dp"
                 android:layout_marginTop="16dp"
+                android:gravity="center"
                 android:text="¿Ya tienes cuenta?"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.907"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bt_iniciar_sesion" />
-
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
@@ -110,5 +105,4 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
