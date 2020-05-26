@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.edenilson.get_job.databinding.FragmentPantalla15Binding
 
 /**
  * A simple [Fragment] subclass.
@@ -16,7 +19,22 @@ class pantalla_15 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pantalla_15, container, false)
+        val binding = DataBindingUtil.inflate<FragmentPantalla15Binding>(
+            inflater, R.layout.fragment_pantalla_15
+            , container, false)
+        binding.notiEmpresa1.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_152_to_pantalla_14)
+
+        }
+        binding.notiEmpresa2.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_152_to_pantalla_14)
+
+        }
+        binding.btnNotificacion.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_152_to_pantalla_18)
+
+        }
+        return binding.root
     }
 
 }

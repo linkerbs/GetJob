@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".pantalla_22">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        app:menu="@menu/menu_usuario" />
+
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/todo"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="-2dp">
+        android:layout_marginStart="@dimen/margin_view"
+        android:layout_marginEnd="@dimen/margin_view"
+        android:layout_marginTop="@dimen/margin_view"
+        >
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+
             android:gravity="center"
             android:text="Notificaciones"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btn_notificacion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.19999999" />
 
         <ImageView
             android:id="@+id/btn_notificacion"
@@ -39,7 +38,6 @@
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
 
-            android:layout_marginEnd="@dimen/margin_wide"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.714"
@@ -53,14 +51,27 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notificaciones Usuario"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Notificaciones chat usuario"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="277dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="56dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</RelativeLayout>
+
+</layout>

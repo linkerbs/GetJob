@@ -1,108 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".pantalla_7">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
 
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="1dp"
-        android:background="#FFFFFF"
-        app:menu="@menu/menu_usuario"/>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/todo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_view"
+            android:layout_marginTop="@dimen/margin_view"
+            android:layout_marginEnd="@dimen/margin_view">
 
-        android:layout_alignParentStart="true">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="86dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_image_black" />
+
+            <Button
+                android:id="@+id/bt_login_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="¿Buscas trabajo?"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+            <TextView
+                android:id="@+id/tv_login_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:text="¡Las mejores ofertas laborales te estan esperando!"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_login_usuario" />
+
+            <Button
+                android:id="@+id/bt_login_empresa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="¿Eres una empresa?"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_login_usuario" />
+
+            <TextView
+                android:id="@+id/tv_login_empresa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Dejanos ayudarte a encontrar los mejores profesionales."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_login_empresa" />
+
+            <Button
+                android:id="@+id/bt_iniciar_sesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Iniciar sesión"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_login_empresa" />
+
+            <TextView
+                android:id="@+id/tv_iniciar_sesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="¿Ya tienes cuenta?"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_iniciar_sesion" />
 
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="86dp"
-            android:layout_height="77dp"
-            android:src="@drawable/ic_image_black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.07999998" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="58dp" />
 
-        <Button
-            android:id="@+id/bt_login_usuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿Buscas trabajo?"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6"
-            app:layout_constraintVertical_bias="0.04000002" />
 
-        <TextView
-            android:id="@+id/tv_login_usuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¡Las mejores ofertas laborales te estan esperando!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bt_login_usuario"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/bt_login_empresa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿Eres una empresa?"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_login_usuario"
-            app:layout_constraintVertical_bias="0.060000002" />
-
-        <TextView
-            android:id="@+id/tv_login_empresa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dejanos ayudarte a encontrar los mejores profesionales."
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bt_login_empresa"
-            app:layout_constraintVertical_bias="0.07999998" />
-
-        <Button
-            android:id="@+id/bt_iniciar_sesion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Iniciar sesión"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_login_empresa"
-            app:layout_constraintVertical_bias="0.120000005" />
-
-        <TextView
-            android:id="@+id/tv_iniciar_sesion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿Ya tienes cuenta?"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bt_iniciar_sesion"
-            app:layout_constraintVertical_bias="0.060000002" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

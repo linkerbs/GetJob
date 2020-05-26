@@ -1,12 +1,33 @@
 package com.edenilson.get_job
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.edenilson.get_job.databinding.FragmentPantalla16Binding
 
-class pantalla_16 : AppCompatActivity() {
+/**
+ * A simple [Fragment] subclass.
+ */
+class pantalla_16 : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pantalla_16)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val binding = DataBindingUtil.inflate<FragmentPantalla16Binding>(
+            inflater, R.layout.fragment_pantalla_16
+            , container, false)
+        binding.editText6.setOnClickListener { view: View ->
+            //view.findNavController().navigate(R.id.action_pantalla_17_to_pantalla_192)
+
+        }
+
+        return binding.root
     }
+
 }

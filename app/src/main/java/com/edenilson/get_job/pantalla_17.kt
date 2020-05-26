@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.edenilson.get_job.databinding.FragmentPantalla17Binding
 
 /**
  * A simple [Fragment] subclass.
@@ -16,7 +18,11 @@ class pantalla_17 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pantalla_17, container, false)
+        val binding = DataBindingUtil.inflate<FragmentPantalla17Binding>(
+            inflater, R.layout.fragment_pantalla_17
+            , container, false)
+
+        return binding.root
     }
 
 }

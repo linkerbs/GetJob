@@ -1,158 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".pantalla_13">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        app:menu="@menu/menu_empresa" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_view"
+        android:layout_marginEnd="@dimen/margin_view"
+        android:layout_marginTop="@dimen/margin_view">
+
 
         <TextView
             android:id="@+id/descrip_empleo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="@dimen/margin_wide"
+
             android:text="Descripcion del Empleo: "
             android:textSize="16dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/d_empleo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
+            app:endIconMode="clear_text"
             android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:ems="10"
-            android:gravity="start|top"
+            android:hint="Breve descripción de la oferta laboral"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descrip_empleo" />
+            app:layout_constraintTop_toBottomOf="@+id/descrip_empleo">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
 
         <TextView
             android:id="@+id/habilidades"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="@dimen/margin_wide1"
+
+            android:layout_marginTop="24dp"
             android:text="Habilidades: "
             android:textSize="16dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/d_empleo"
             tools:ignore="MissingConstraints" />
 
-        <EditText
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/habilidades_descrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
             android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:ems="10"
-            android:gravity="start|top"
+
+            android:hint="Habilidades necesarias del empleado."
+
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
+            app:endIconMode="clear_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/habilidades" />
+            app:layout_constraintTop_toBottomOf="@+id/habilidades" >
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/conocimiento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="@dimen/margin_wide1"
+
+            android:layout_marginTop="24dp"
             android:text="Conocimiento: "
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/habilidades_descrip"
             tools:ignore="MissingConstraints" />
 
-        <EditText
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/conocimiento_descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
+
             android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:ems="10"
-            android:gravity="start|top"
+android:hint="Herramientas o tecnicas que debe conocer el empleado."
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
+            app:endIconMode="clear_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/conocimiento" />
+            app:layout_constraintTop_toBottomOf="@+id/conocimiento">
 
-        <Switch
-            android:id="@+id/switch_experiencia"
-            android:layout_width="122dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="@dimen/margin_wide1"
-            android:text="Experiencia: "
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_experiencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="28dp"
+            android:text="Experiencia:"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/conocimiento_descripcion"
             tools:ignore="MissingConstraints" />
 
-        <EditText
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editText2"
+            android:layout_width="124dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:ems="10"
+            android:inputType="number"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toStartOf="@+id/editText3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_experiencia"
+            app:layout_constraintTop_toBottomOf="@+id/conocimiento_descripcion">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/editText3"
             android:layout_width="107dp"
             android:layout_height="44dp"
-            android:layout_marginTop="@dimen/margin_wide1"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="@dimen/margin_wide"
-            android:drawableRight="@drawable/ic_arrow_black"
-            android:ems="10"
-            android:gravity="start|top"
             android:hint="Meses"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/conocimiento_descripcion" />
 
-        <EditText
-            android:id="@+id/editText4"
-            android:layout_width="131dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="Vacantes: "
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switch_experiencia" />
 
-        <Button
-            android:id="@+id/button3"
+        <TextView
+            android:id="@+id/tv_vacantes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:text="Publicar"
-            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:layout_marginTop="36dp"
+            android:text="Vacantes:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_experiencia"
+            tools:ignore="MissingConstraints" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_vacantes"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_wide"
+
+
+            app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.237"
+            app:layout_constraintStart_toEndOf="@+id/tv_vacantes"
+            app:layout_constraintTop_toBottomOf="@+id/editText2"
+            app:layout_constraintVertical_bias="0.588">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+
+            android:id="@+id/button3"
+            android:layout_width="135dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="16dp"
+
+            android:text="Publicar"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="56dp" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
+
+</layout>

@@ -1,43 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".pantalla_15">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        app:menu="@menu/menu_empresa" />
+
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/todo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="-2dp">
+        android:layout_marginStart="@dimen/margin_view"
+        android:layout_marginEnd="@dimen/margin_view"
+        android:layout_marginTop="@dimen/margin_view"
+        >
 
-        <EditText
-            android:id="@+id/et_buscar_oferta"
-            android:layout_width="324dp"
-            android:layout_height="55dp"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_buscar_mensaje_empresa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_marginEnd="24dp"
             android:layout_toLeftOf="@+id/btn_notificacion"
             android:drawableLeft="@android:drawable/ic_menu_search"
-            android:hint="Buscar "
+            android:hint="Buscar mensaje"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.183"
+            app:layout_constraintEnd_toStartOf="@+id/btn_notificacion"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029" />
+            app:layout_constraintVertical_bias="0.0"
+            app:startIconDrawable="@android:drawable/ic_menu_search">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <ImageButton
             android:id="@+id/btn_notificacion"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -45,10 +63,8 @@
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.714"
-            app:layout_constraintStart_toEndOf="@+id/et_buscar_oferta"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.028"
+            app:layout_constraintVertical_bias="0.001"
             app:srcCompat="@drawable/ic_notifications_black"
             tools:ignore="VectorDrawableCompat" />
 
@@ -56,14 +72,55 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:text="Notificaciones del Chat"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notiEmpresa2"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/notiEmpresa1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/notiempresa1"
+            app:layout_constraintBottom_toTopOf="@+id/notiEmpresa2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="279dp"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toBottomOf="@+id/et_buscar_mensaje_empresa" />
+
+        <Button
+            android:id="@+id/notiEmpresa2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/empres2"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notiEmpresa1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="56dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</RelativeLayout>
+
+</layout>
