@@ -22,6 +22,7 @@ class pantalla_6 : Fragment() {
             inflater, R.layout.fragment_pantalla_6
             , container, false)
 
+        (activity as MainActivity).supportActionBar?.title = ("Nombre de la oferta aqui")
         return binding.root
     }
 

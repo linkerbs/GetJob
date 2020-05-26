@@ -32,6 +32,7 @@ class pantalla_12 : Fragment() {
 
         }
 
+        (activity as CompanyActivity).supportActionBar?.title = ("Solicitudes")
         return binding.root
     }
 

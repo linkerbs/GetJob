@@ -22,6 +22,7 @@ class pantalla_22 : Fragment() {
             inflater, R.layout.fragment_pantalla_22
             , container, false)
 
+        //(activity as MainActivity).supportActionBar?.title = ("Notifiaciones")
         return binding.root
     }
 

@@ -22,6 +22,7 @@ class pantalla_14 : Fragment() {
             inflater, R.layout.fragment_pantalla_14
             , container, false)
 
+        (activity as CompanyActivity).supportActionBar?.title = ("Nombre del chat aqui")
         return binding.root
     }
 

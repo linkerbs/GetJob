@@ -22,6 +22,7 @@ class pantalla_19 : Fragment() {
             inflater, R.layout.fragment_pantalla_19
             , container, false)
 
+        (activity as UserActivity).supportActionBar?.title = ("Perfil")
         return binding.root
     }
 

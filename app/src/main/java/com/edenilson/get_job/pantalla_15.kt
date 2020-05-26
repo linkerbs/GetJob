@@ -34,6 +34,7 @@ class pantalla_15 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_152_to_pantalla_18)
 
         }
+        (activity as CompanyActivity).supportActionBar?.title = ("Chat")
         return binding.root
     }
 

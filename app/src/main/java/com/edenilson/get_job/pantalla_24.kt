@@ -38,6 +38,7 @@ class pantalla_24 : Fragment() {
 
         }
 
+        (activity as UserActivity).supportActionBar?.title = ("Buscar Ofertas")
         return binding.root
     }
 

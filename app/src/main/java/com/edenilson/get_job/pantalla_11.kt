@@ -29,6 +29,7 @@ class pantalla_11 : Fragment() {
 
         }
       //  setHasOptionsMenu(true)
+        (activity as CompanyActivity).supportActionBar?.title = ("Mis ofertas")
         return binding.root
 
 

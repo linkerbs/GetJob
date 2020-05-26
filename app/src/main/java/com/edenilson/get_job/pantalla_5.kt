@@ -36,7 +36,7 @@ class pantalla_5 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_7)
         }
 
-
+        //(activity as MainActivity).supportActionBar?.title = ("Get Job")
         return binding.root
 
 

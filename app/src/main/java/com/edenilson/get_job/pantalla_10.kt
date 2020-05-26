@@ -32,6 +32,7 @@ class pantalla_10 : Fragment() {
             val intent = Intent(activity, UserActivity::class.java)
             activity!!.startActivity(intent)
         }
+        (activity as MainActivity).supportActionBar?.title = ("Iniciar Sesion")
         return binding.root
     }
 

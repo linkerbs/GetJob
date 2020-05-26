@@ -33,6 +33,8 @@ class pantalla_7 : Fragment() {
         binding.btIniciarSesion.setOnClickListener { view: View->
             view.findNavController().navigate(R.id.action_pantalla_7_to_pantalla_10)
         }
+
+        (activity as MainActivity).supportActionBar?.title = ("¿Tienes una cuenta?")
         return binding.root
     }
 

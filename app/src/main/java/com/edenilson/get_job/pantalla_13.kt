@@ -22,6 +22,7 @@ class pantalla_13 : Fragment() {
             inflater, R.layout.fragment_pantalla_13
             , container, false)
 
+        (activity as CompanyActivity).supportActionBar?.title = ("Publicar oferta")
         return binding.root
     }
 
