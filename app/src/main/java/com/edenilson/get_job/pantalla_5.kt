@@ -24,17 +24,6 @@ class pantalla_5 : Fragment() {
             , container, false
         )
 
-        binding.tvVerMas.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_6)
-        }
-
-        binding.button.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_7)
-        }
-
-        binding.button2.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_7)
-        }
 
         //(activity as MainActivity).supportActionBar?.title = ("Get Job")
         return binding.root

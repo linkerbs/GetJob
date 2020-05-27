@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.edenilson.get_job.databinding.FragmentPantalla13Binding
 
 /**
@@ -23,6 +24,10 @@ class pantalla_13 : Fragment() {
             , container, false)
 
         (activity as CompanyActivity).supportActionBar?.title = ("Publicar oferta")
+
+        binding.button3.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_pantalla_13_to_fragment_pantalla_11)
+        }
         return binding.root
     }
 

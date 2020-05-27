@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.edenilson.get_job.databinding.FragmentPantalla19Binding
 
 /**
@@ -23,7 +24,13 @@ class pantalla_19 : Fragment() {
             , container, false)
 
         (activity as UserActivity).supportActionBar?.title = ("Perfil")
+
+        binding.btnModificarPerfilUsuario.setOnClickListener { view:View ->
+            view.findNavController().navigate(R.id.action_pantalla_19_to_pantalla_30)
+        }
         return binding.root
+
+
     }
 
 }

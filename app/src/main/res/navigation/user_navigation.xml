@@ -9,7 +9,11 @@
         android:id="@+id/pantalla_19"
         android:name="com.edenilson.get_job.pantalla_19"
         android:label="fragment_pantalla_19"
-        tools:layout="@layout/fragment_pantalla_19" />
+        tools:layout="@layout/fragment_pantalla_19" >
+        <action
+            android:id="@+id/action_pantalla_19_to_pantalla_30"
+            app:destination="@id/pantalla_30" />
+    </fragment>
     <fragment
         android:id="@+id/pantalla_20"
         android:name="com.edenilson.get_job.pantalla_20"
@@ -64,4 +68,9 @@
         android:id="@+id/pantalla_53"
         android:name="com.edenilson.get_job.pantalla_5"
         android:label="pantalla_5" />
+    <fragment
+        android:id="@+id/pantalla_30"
+        android:name="com.edenilson.get_job.pantalla_30"
+        android:label="fragment_pantalla_30"
+        tools:layout="@layout/fragment_pantalla_30" />
 </navigation>
