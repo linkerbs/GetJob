@@ -53,17 +53,12 @@
             android:id="@+id/action_pantalla_24_to_pantalla_224"
             app:destination="@id/pantalla_22" />
         <action
-            android:id="@+id/action_pantalla_24_to_pantalla_34"
-            app:destination="@id/pantalla_34" />
-        <action
             android:id="@+id/action_pantalla_24_to_pantalla_5_3"
             app:destination="@id/pantalla_5_3" />
+        <action
+            android:id="@+id/action_pantalla_24_to_pantalla_3_3"
+            app:destination="@id/pantalla_3_3" />
     </fragment>
-    <fragment
-        android:id="@+id/pantalla_34"
-        android:name="com.edenilson.get_job.pantalla_3"
-        android:label="fragment_pantalla_3"
-        tools:layout="@layout/fragment_pantalla_3" />
     <fragment
         android:id="@+id/pantalla_5_3"
         android:name="com.edenilson.get_job.pantalla_5_3"
@@ -81,4 +76,8 @@
         android:name="com.edenilson.get_job.pantalla_30"
         android:label="fragment_pantalla_30"
         tools:layout="@layout/fragment_pantalla_30" />
+    <fragment
+        android:id="@+id/pantalla_3_3"
+        android:name="com.edenilson.get_job.pantalla_3_3"
+        android:label="pantalla_3_3" />
 </navigation>

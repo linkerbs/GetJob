@@ -30,7 +30,7 @@ class pantalla_24 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_5_3)
         }
         binding.btnFILTRO.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_34)
+            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_3_3)
 
         }
         binding.btnNotificacion.setOnClickListener { view: View ->
