@@ -143,6 +143,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
             android:ems="10"
+            android:hint="2,4,6"
             android:inputType="number"
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toStartOf="@+id/editText3"
@@ -187,6 +188,7 @@
             android:layout_height="wrap_content"
 
 
+            android:hint="1,2,4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_vacantes">
 

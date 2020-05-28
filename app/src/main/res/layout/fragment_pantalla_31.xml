@@ -164,6 +164,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="28dp"
             android:ems="10"
+            android:hint="2,4,6"
             android:inputType="number"
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toStartOf="@+id/editText3"
@@ -214,6 +215,7 @@
             android:layout_marginEnd="@dimen/margin_wide"
 
 
+            android:hint="1,2,4"
             app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.237"

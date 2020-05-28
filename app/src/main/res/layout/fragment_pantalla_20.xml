@@ -44,9 +44,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-
         <ImageButton
             android:id="@+id/btn_notificacion"
             android:layout_width="50dp"
@@ -60,8 +57,7 @@
             app:layout_constraintStart_toEndOf="@+id/et_buscar_mensaje_usuario"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.001"
-            app:srcCompat="@drawable/ic_notifications_black"
-            tools:ignore="VectorDrawableCompat" />
+            app:srcCompat="@drawable/ic_notifications_black" />
 
 
 
