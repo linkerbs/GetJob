@@ -126,6 +126,15 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_end="58dp" />
 
+        <Button
+            android:id="@+id/btCerrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cerrar Sesion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBtn_perfil_usuario" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,7 @@ class pantalla_24 : Fragment() {
             , container, false)
 
         binding.btnOferta.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_53)
+            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_5_3)
         }
         binding.btnFILTRO.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_34)

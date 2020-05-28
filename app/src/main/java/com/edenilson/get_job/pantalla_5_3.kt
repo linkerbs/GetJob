@@ -12,7 +12,7 @@ import com.edenilson.get_job.databinding.FragmentPantalla5Binding
 /**
  * A simple [Fragment] subclass.
  */
-class pantalla_5 : Fragment() {
+class pantalla_5_3 : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,10 +25,10 @@ class pantalla_5 : Fragment() {
         )
 
         binding.tvVerMas.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_6)
+            view.findNavController().navigate(R.id.action_pantalla_5_3_to_pantalla_6_3)
         }
 
-        (activity as MainActivity).supportActionBar?.title = ("Get Job")
+        (activity as UserActivity).supportActionBar?.title = ("Get Job")
         return binding.root
 
 

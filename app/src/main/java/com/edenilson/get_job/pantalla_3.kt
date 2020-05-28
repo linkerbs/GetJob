@@ -27,9 +27,10 @@ class pantalla_3 : Fragment() {
 
         val binding = DataBindingUtil.inflate<FragmentPantalla3Binding>(
             inflater, R.layout.fragment_pantalla_3
-            , container, false)
+            , container, false
+        )
 
-      //  (activity as MainActivity).supportActionBar?.title = ("Eliga los filtros")
+        (activity as MainActivity).supportActionBar?.title = ("Eliga los filtros")
         return binding.root
 
     }

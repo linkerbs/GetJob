@@ -6,23 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.edenilson.get_job.databinding.FragmentPantalla30Binding
+import com.edenilson.get_job.databinding.FragmentPantalla6Binding
 
 /**
  * A simple [Fragment] subclass.
  */
-class pantalla_30 : Fragment() {
+class pantalla_6_3 : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentPantalla30Binding>(
-            inflater, R.layout.fragment_pantalla_30
+        val binding = DataBindingUtil.inflate<FragmentPantalla6Binding>(
+            inflater, R.layout.fragment_pantalla_6
             , container, false)
 
-        (activity as UserActivity).supportActionBar?.title = ("Editar Usuario")
+        (activity as UserActivity).supportActionBar?.title = ("Nombre de la oferta aqui")
         return binding.root
     }
 

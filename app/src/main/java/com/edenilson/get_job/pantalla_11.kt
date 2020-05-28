@@ -10,6 +10,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.edenilson.get_job.databinding.FragmentPantalla11Binding
 
+
 /**
  * A simple [Fragment] subclass.
  */
@@ -28,6 +29,11 @@ class pantalla_11 : Fragment() {
             view.findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_18)
 
         }
+
+        binding.btnOfertaLaboralEmpresa.setOnClickListener {view: View ->
+            view.findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_31)
+        }
+
       //  setHasOptionsMenu(true)
         (activity as CompanyActivity).supportActionBar?.title = ("Mis ofertas")
         return binding.root

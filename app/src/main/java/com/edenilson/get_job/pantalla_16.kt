@@ -1,5 +1,6 @@
 package com.edenilson.get_job
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,6 +26,11 @@ class pantalla_16 : Fragment() {
         binding.editText6.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_pantalla_17_to_pantalla_172)
 
+        }
+
+        binding.btCerrar.setOnClickListener { view: View ->
+            val intent = Intent(activity, MainActivity::class.java)
+            activity!!.startActivity(intent)
         }
         (activity as CompanyActivity).supportActionBar?.title = ("Perfil")
         return binding.root
