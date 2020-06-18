@@ -12,25 +12,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/margin_view"
-            android:layout_marginTop="@dimen/margin_view"
             android:layout_marginEnd="@dimen/margin_view">
 
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="86dp"
-                android:layout_height="77dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_image_black" />
+                app:srcCompat="@drawable/ic_launcher_foreground" />
 
             <Button
                 android:id="@+id/bt_login_usuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
                 android:text="¿Buscas trabajo?"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.085"
@@ -41,7 +38,6 @@
                 android:id="@+id/bt_login_empresa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
                 android:text="¿Eres una empresa?"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.518"
@@ -76,7 +72,6 @@
                 android:id="@+id/bt_iniciar_sesion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
                 android:text="Iniciar sesión"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.91"
