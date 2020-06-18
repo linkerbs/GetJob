@@ -20,13 +20,12 @@
             >
 
 
-
             <Button
                 android:id="@+id/bt_iniciar_sesion_entrar2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="24dp"
                 android:text="Usuario"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -36,14 +35,13 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="102dp"
-                android:layout_height="93dp"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
 
-                android:layout_marginTop="36dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_image_black" />
+                app:srcCompat="@drawable/ic_launcher_foreground" />
 
 
             <com.google.android.material.textfield.TextInputLayout
