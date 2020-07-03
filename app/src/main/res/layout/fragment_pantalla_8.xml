@@ -41,7 +41,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:id="@+id/et_nombre_empresas"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -60,7 +61,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:id="@+id/et_correo_empresas"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -87,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:id="@+id/et_contra_empresas"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,6 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:id="@+id/et_contra_again_empresas"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,7 +136,8 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_contra_again_empresa" />
+            app:layout_constraintTop_toBottomOf="@+id/et_contra_again_empresa"
+            />
 
 
 
