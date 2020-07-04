@@ -61,7 +61,7 @@ class pantalla_9 : Fragment() {
                                     activity, "Usuario creado con exito.",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                view.findNavController().navigate(R.id.action_pantalla_8_to_pantalla_10)
+                                view.findNavController().navigate(R.id.action_pantalla_9_to_pantalla_10)
 
                             } else {
                                 // If sign in fails, display a message to the user.
@@ -76,7 +76,7 @@ class pantalla_9 : Fragment() {
 
                         })
             }
-            view.findNavController().navigate(R.id.action_pantalla_9_to_pantalla_10)
+
             
             
         }

@@ -1,19 +1,30 @@
 package com.edenilson.get_job
 
+import android.R.attr.password
+import android.app.Activity
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.edenilson.get_job.databinding.FragmentPantalla10Binding
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+
 
 /**
  * A simple [Fragment] subclass.
  */
 class pantalla_10 : Fragment() {
 
+    private lateinit var mAuth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,14 +35,35 @@ class pantalla_10 : Fragment() {
             , container, false)
 
         binding.btIniciarSesionEntrar.setOnClickListener { view: View ->
-            val intent = Intent(activity, CompanyActivity::class.java)
-            activity!!.startActivity(intent)
+            mAuth = FirebaseAuth.getInstance();
+            var correo: String = binding.etCorreos?.text.toString()
+            var contra: String = binding.etContras?.text.toString()
+            mAuth.signInWithEmailAndPassword(correo, contra)
+                .addOnCompleteListener(
+                    Activity(),
+                    OnCompleteListener<AuthResult?> { task ->
+                        if (task.isSuccessful) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success")
+                            val user: FirebaseUser = mAuth.getCurrentUser()!!
+                            val intent = Intent(activity, CompanyActivity::class.java)
+                            activity!!.startActivity(intent)
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.exception)
+                            Toast.makeText(
+                                activity, "Authentication failed.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                        }
+
+                    })
+
         }
 
-        binding.btIniciarSesionEntrar2.setOnClickListener { view: View ->
-            val intent = Intent(activity, UserActivity::class.java)
-            activity!!.startActivity(intent)
-        }
+
         (activity as MainActivity).supportActionBar?.title = ("Iniciar Sesion")
         return binding.root
     }
