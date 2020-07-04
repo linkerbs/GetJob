@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-
+                android:id="@+id/et_nombre_usuarios"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -70,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:id="@+id/et_apellido_usuarios"
 
                 />
 
@@ -93,6 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
+                android:id="@+id/et_correo_usuarios"
 
                 />
 
@@ -118,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-
+                android:id="@+id/et_contra_usuarios"
                 />
 
 
@@ -148,6 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:id="@+id/et_contra_again_usuarios"
 
                 />
 
