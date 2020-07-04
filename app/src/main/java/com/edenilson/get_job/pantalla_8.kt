@@ -1,6 +1,5 @@
 package com.edenilson.get_job
 
-import android.R.attr.password
 import android.app.Activity
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -17,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 /**
@@ -40,6 +40,7 @@ class pantalla_8 : Fragment() {
             , container, false)
 
         mAuth = FirebaseAuth.getInstance();
+        val db = FirebaseFirestore.getInstance()
         binding.btRegistroEmpresa.setOnClickListener { view: View ->
 
 
@@ -69,6 +70,30 @@ class pantalla_8 : Fragment() {
                                     activity, "Usuario creado con exito.",
                                     Toast.LENGTH_SHORT
                                 ).show()
+
+                                val usuario: MutableMap<String, Any> =
+                                    HashMap()
+                                usuario["nombre"] = nombre
+                                usuario["correo"] = correo
+                                usuario["tipo"] = "1"
+
+                                db.collection("usuarios")
+                                    .add(usuario)
+                                    .addOnSuccessListener { documentReference ->
+                                        Log.d(
+                                            TAG,
+                                            "Se agrego el documento con ID " + documentReference.id
+                                        )
+                                    }
+                                    .addOnFailureListener { e ->
+                                        Log.w(
+                                            TAG,
+                                            "C mamo algo",
+                                            e
+                                        )
+                                    }
+
+
                                 view.findNavController().navigate(R.id.action_pantalla_8_to_pantalla_10)
 
                             } else {
@@ -96,5 +121,9 @@ class pantalla_8 : Fragment() {
 
         return binding.root
     }
+
+}
+
+private operator fun FirebaseUser.set(s: String, value: String) {
 
 }

@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 
 /**
  * A simple [Fragment] subclass.
@@ -34,6 +35,7 @@ class pantalla_9 : Fragment() {
 
         binding.btRegistroUsuario.setOnClickListener { view: View ->
             mAuth = FirebaseAuth.getInstance();
+            val db = FirebaseFirestore.getInstance()
 
             var nombre: String = binding.etNombreUsuarios?.text.toString()
             var apellido: String = binding.etApellidoUsuarios?.text.toString()
@@ -61,6 +63,29 @@ class pantalla_9 : Fragment() {
                                     activity, "Usuario creado con exito.",
                                     Toast.LENGTH_SHORT
                                 ).show()
+
+                                val usuario: MutableMap<String, Any> =
+                                    HashMap()
+                                usuario["nombre"] = nombre
+                                usuario["apellido"] = apellido
+                                usuario["correo"] = correo
+                                usuario["tipo"] = "2"
+
+                                db.collection("usuarios")
+                                    .add(usuario)
+                                    .addOnSuccessListener { documentReference ->
+                                        Log.d(
+                                            ContentValues.TAG,
+                                            "Se agrego el documento con ID " + documentReference.id
+                                        )
+                                    }
+                                    .addOnFailureListener { e ->
+                                        Log.w(
+                                            ContentValues.TAG,
+                                            "C mamo algo",
+                                            e
+                                        )
+                                    }
                                 view.findNavController().navigate(R.id.action_pantalla_9_to_pantalla_10)
 
                             } else {
@@ -70,6 +95,8 @@ class pantalla_9 : Fragment() {
                                     activity, "Fallo en la creacion.",
                                     Toast.LENGTH_SHORT
                                 ).show()
+
+
 
                             }
 
