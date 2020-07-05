@@ -34,7 +34,11 @@ class pantalla_10 : Fragment() {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentPantalla10Binding>(
             inflater, R.layout.fragment_pantalla_10
-            , container, false)
+            , container, false
+        )
+
+        devolver()
+
 
         binding.btIniciarSesionEntrar.setOnClickListener { view: View ->
             mAuth = FirebaseAuth.getInstance();
@@ -61,15 +65,15 @@ class pantalla_10 : Fragment() {
                                     .get()
                                     .addOnSuccessListener { documents ->
                                         for (document in documents) {
-                                           if(document.getString("tipo") == "1"){
-                                               val intent = Intent(activity, CompanyActivity::class.java)
-                                               activity!!.startActivity(intent)
-                                           }
-                                            else
-                                           {
-                                               val intent = Intent(activity, UserActivity::class.java)
-                                               activity!!.startActivity(intent)
-                                           }
+                                            if (document.getString("tipo") == "1") {
+                                                val intent =
+                                                    Intent(activity, CompanyActivity::class.java)
+                                                activity!!.startActivity(intent)
+                                            } else {
+                                                val intent =
+                                                    Intent(activity, UserActivity::class.java)
+                                                activity!!.startActivity(intent)
+                                            }
                                         }
                                     }
                                     .addOnFailureListener { exception ->
@@ -95,6 +99,50 @@ class pantalla_10 : Fragment() {
 
         (activity as MainActivity).supportActionBar?.title = ("Iniciar Sesion")
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        devolver()
+
+    }
+
+
+    fun devolver() {
+
+        val user = FirebaseAuth.getInstance().currentUser
+        user?.let {
+            val name = user.email
+            if (name != "") {
+
+
+                val user = FirebaseAuth.getInstance().currentUser
+                user?.let {
+                    val name = user.email
+                    db.collection("usuarios")
+                        .whereEqualTo("correo", name)
+                        .get()
+                        .addOnSuccessListener { documents ->
+                            for (document in documents) {
+                                if (document.getString("tipo") == "1") {
+                                    val intent = Intent(activity, CompanyActivity::class.java)
+                                    activity!!.startActivity(intent)
+                                } else {
+                                    val intent = Intent(activity, UserActivity::class.java)
+                                    activity!!.startActivity(intent)
+                                }
+                            }
+                        }
+                        .addOnFailureListener { exception ->
+                            Log.w(TAG, "Error getting documents: ", exception)
+                        }
+
+                }
+
+
+            }
+
+        }
     }
 
 }

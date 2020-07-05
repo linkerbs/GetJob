@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.edenilson.get_job.databinding.FragmentPantalla19Binding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 /**
  * A simple [Fragment] subclass.
@@ -31,6 +33,8 @@ class pantalla_19 : Fragment() {
         }
 
         binding.btCerrar.setOnClickListener { view: View ->
+
+            Firebase.auth.signOut()
             val intent = Intent(activity, MainActivity::class.java)
             activity!!.startActivity(intent)
         }
