@@ -43,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:id="@+id/et_nombre_usuarios"
 
                 />
 
@@ -64,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:id="@+id/et_apellido_usuarios"
 
                 />
 
@@ -84,7 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/et_apellido_usuario">
 
             <com.google.android.material.textfield.TextInputEditText
-
+                android:id="@+id/et_correo_usuarios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
@@ -110,7 +112,7 @@
             app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.textfield.TextInputEditText
-
+                android:id="@+id/et_contra_usuarios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -139,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-
+                android:id="@+id/et_contra_again_usuarios"
                 />
 
 

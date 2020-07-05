@@ -2,6 +2,7 @@ package com.edenilson.get_job
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation.findNavController
@@ -9,13 +10,15 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.edenilson.get_job.databinding.FragmentPantalla11Binding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 
 /**
  * A simple [Fragment] subclass.
  */
 class pantalla_11 : Fragment() {
-
+    private lateinit var mAuth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,6 +39,16 @@ class pantalla_11 : Fragment() {
 
       //  setHasOptionsMenu(true)
         (activity as CompanyActivity).supportActionBar?.title = ("Mis ofertas")
+        val user = FirebaseAuth.getInstance().currentUser
+        user?.let {
+            val name = user.email
+            Toast.makeText(
+                activity, name,
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
+
         return binding.root
 
 

@@ -20,19 +20,6 @@
             >
 
 
-            <Button
-                android:id="@+id/bt_iniciar_sesion_entrar2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="24dp"
-                android:text="Usuario"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bt_iniciar_sesion_entrar" />
-
-
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
@@ -59,7 +46,7 @@
                 app:layout_constraintVertical_bias="0.101">
 
                 <com.google.android.material.textfield.TextInputEditText
-
+                    android:id="@+id/et_correos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -84,7 +71,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/et_correo">
 
                 <com.google.android.material.textfield.TextInputEditText
-
+                    android:id="@+id/et_contras"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -100,7 +87,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="40dp"
-                android:text="Empresa"
+                android:text="Iniciar Sesion"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
