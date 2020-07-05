@@ -26,9 +26,11 @@ class pantalla_24 : Fragment() {
             inflater, R.layout.fragment_pantalla_4
             , container, false)
 
-        binding.btnOferta.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_5_3)
-        }
+//        Boton que te va a dirigir a la oferta laboral
+//        binding.btnOferta.setOnClickListener { view: View ->
+//            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_5_3)
+//        }
+
         binding.btnFILTRO.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_3_3)
 

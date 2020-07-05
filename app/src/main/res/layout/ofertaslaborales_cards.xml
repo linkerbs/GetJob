@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <ImageView
+            android:id="@+id/empresa_foto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/oferta_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/empresa_foto"
+            android:layout_toRightOf="@+id/empresa_foto"
+            android:text="Titulo de la oferta laboral"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/empresa_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/oferta_titulo"
+            android:layout_marginStart="10dp"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/empresa_foto"
+            android:layout_toRightOf="@+id/empresa_foto"
+            android:text="Nombre de la empresa"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/vacantes_cantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/empresa_nombre"
+            android:layout_marginStart="10dp"
+
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/empresa_foto"
+            android:layout_toRightOf="@+id/empresa_foto"
+            android:text="Vacantes:"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
