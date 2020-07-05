@@ -60,5 +60,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.4.3'
     implementation 'com.google.firebase:firebase-auth-ktx:19.3.1'
     implementation 'com.google.firebase:firebase-firestore:21.4.3'
+    implementation 'com.firebaseui:firebase-ui-firestore:6.2.1'
+
+    //recyclerview y viewcard
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    //Glide onda para imagenes
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
 
 }

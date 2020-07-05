@@ -5,7 +5,6 @@
     tools:context=".pantalla_4">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,19 +71,6 @@
             app:layout_constraintTop_toBottomOf="@+id/et_buscar_oferta" />
 
 
-        <Button
-            android:id="@+id/btnOferta"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_above="@+id/bottomNav"
-
-
-            android:text="Futuro boton de ofertas"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnFILTRO" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/margin_end_guide"
             android:layout_width="wrap_content"
@@ -98,6 +84,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_end="56dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ofertasLaborales_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFILTRO" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
