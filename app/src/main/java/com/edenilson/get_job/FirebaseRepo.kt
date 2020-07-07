@@ -19,7 +19,7 @@ class FirebaseRepo {
             .collection("ofertas")
             .orderBy("fecha_publicacion", Query.Direction.DESCENDING)
             .get()
-        Log.i("FirebaseRepo","Termina de consultar las ofertas laborales")
+//        Log.i("FirebaseRepo","Termina de consultar las ofertas laborales")
     }
 
 //    Obtener informacion de la empresa que lo posteo

@@ -48,7 +48,8 @@
     <fragment
         android:id="@+id/pantalla_24"
         android:name="com.edenilson.get_job.pantalla_24"
-        android:label="pantalla_24" >
+        android:label="pantalla_24"
+        tools:layout="@layout/fragment_pantalla_4">
         <action
             android:id="@+id/action_pantalla_24_to_pantalla_224"
             app:destination="@id/pantalla_22" />
@@ -62,7 +63,8 @@
     <fragment
         android:id="@+id/pantalla_5_3"
         android:name="com.edenilson.get_job.pantalla_5_3"
-        android:label="pantalla_5_3" >
+        android:label="pantalla_5_3"
+        tools:layout="@layout/fragment_pantalla_5">
         <action
             android:id="@+id/action_pantalla_5_3_to_pantalla_6_3"
             app:destination="@id/pantalla_6_3" />
@@ -70,7 +72,8 @@
     <fragment
         android:id="@+id/pantalla_6_3"
         android:name="com.edenilson.get_job.pantalla_6_3"
-        android:label="pantalla_6_3" />
+        android:label="pantalla_6_3"
+        tools:layout="@layout/fragment_pantalla_6"/>
     <fragment
         android:id="@+id/pantalla_30"
         android:name="com.edenilson.get_job.pantalla_30"

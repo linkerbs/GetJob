@@ -1,5 +1,6 @@
 package com.edenilson.get_job
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -34,6 +35,7 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d(TAG,"Se metio al fragmento")
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentPantalla4Binding>(
             inflater, R.layout.fragment_pantalla_4
@@ -58,7 +60,7 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
 
 //        Cargo los datos
         loadPostData()
-//        los ingreso al recyclerview
+
 
 
 
@@ -69,10 +71,83 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        Log.d(TAG,"on ActivityCreated")
+
         //        inicializar el recylcer view
         ofertasLaborales_list.layoutManager = LinearLayoutManager(context)
         ofertasLaborales_list.adapter = postListAdapter
     }
+
+    override fun onAttachFragment(childFragment: Fragment) {
+        super.onAttachFragment(childFragment)
+        Log.d(TAG,"on attachFragment")
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG,"on Resumen")
+        ofertasLaborales_list.layoutManager = LinearLayoutManager(context)
+        ofertasLaborales_list.adapter = postListAdapter
+
+    }
+
+
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG,"on Pause")
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG,"on Stop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG,"on Destroy")
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG,"on Start")
+        ofertasLaborales_list.layoutManager = LinearLayoutManager(context)
+        ofertasLaborales_list.adapter = postListAdapter
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d(TAG,"Onn destroyview")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d(TAG,"Onn Detach")
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(TAG,"Onn created")
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.d(TAG,"Onn viewCreated")
+
+    }
+
+
+
+
+
+
 
 //    Metodo para cargar todos los datos
     private fun loadPostData(){
@@ -84,7 +159,7 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
                 postList = it.result!!.toObjects(PostModel::class.java)
                 postListAdapter.postListItems = postList
                 postListAdapter.notifyDataSetChanged()
-//                    Log.d(TAG,"Usuario: ${it.result}")
+                    Log.d(TAG,"Usuario: ${it.result}")
             }else{
                 Log.d(TAG,"Error: ${it.exception!!.message}")
 
@@ -114,15 +189,15 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
 
         FirebaseAuth.getInstance().addAuthStateListener { user ->
 
-            if(user.uid != ""){
-                Log.d(TAG,"No se sampo: ${user}")
-                view?.findNavController()?.navigate(R.id.pantalla_7)
-            }else{
+//            if(user.uid != ""){
+//                Log.d(TAG,"No se sampo: ${user}")
+//                view?.findNavController()?.navigate(R.id.pantalla_7)
+//            }else{
                 Log.d(TAG,"SI se sampo: ${user}")
-                findNavController().navigate(R.id.action_pantalla_4_to_pantalla_5)
+                findNavController().navigate(R.id.pantalla_7)
 
 
-            }
+//            }
         }
 
     }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.edenilson.get_job.databinding.FragmentPantalla5Binding
 
@@ -29,6 +30,10 @@ class pantalla_5 : Fragment() {
         }
 
         (activity as MainActivity).supportActionBar?.title = ("Get Job")
+
+
+
+
         return binding.root
 
 
