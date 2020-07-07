@@ -33,7 +33,7 @@ class pantalla_13 : Fragment() {
             inflater, R.layout.fragment_pantalla_13
             , container, false)
 
-        db = FirebaseFirestore.getInstance().document("Ofertas")
+        db = FirebaseFirestore.getInstance().document("Of/Des")
 
         val store = findNavController().navigate(R.id.button3) as Button
         store.setOnClickListener {
