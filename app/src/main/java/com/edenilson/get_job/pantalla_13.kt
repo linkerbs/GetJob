@@ -37,6 +37,7 @@ class pantalla_13 : Fragment() {
 
 
 
+
         (activity as CompanyActivity).supportActionBar?.title = ("Publicar oferta")
 
         binding.btnGuardar?.setOnClickListener { view: View ->
