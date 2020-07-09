@@ -29,15 +29,15 @@ class FirebaseRepo {
 //        Log.i("FirebaseRepo","Termina de consultar las ofertas laborales")
     }
 
-//    Obtener informacion de la empresa que lo posteo
+//    Obtener oferta laboral para la  empresa que lo posteo
 //
-//    fun getEmpresa(): Task<QuerySnapshot> {
-//        return firebaseFirestore
-//            .collection("usuarios")
-//            .whereEqualTo("tipo","1")
-//            .get()
-//
-//    }
+    fun getEmpresa(correo:String): Task<QuerySnapshot> {
+        return firebaseFirestore
+            .collection("ofertas")
+            .whereEqualTo("correo",correo)
+            .get()
+
+    }
 
 
 

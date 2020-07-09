@@ -31,7 +31,7 @@ class PostListAdapter(var postListItems: List<PostModel> , val clickListener:(Po
 //
 
 
-//            itemView.vacantes_cantidad.text = "Vacantes: "+postModel.vacantes
+            itemView.vacantes_cantidad.text = "Vacantes: "+postModel.vacantes
 //            Log.d(TAG,"Nombre de la empresa: ${postModel.nombre_empresa}")
 
 //            mostramos la foto
