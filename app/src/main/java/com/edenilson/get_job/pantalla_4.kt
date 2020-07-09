@@ -1,5 +1,6 @@
 package com.edenilson.get_job
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,12 +22,13 @@ import kotlinx.android.synthetic.main.fragment_pantalla_4.*
 /**
  * A simple [Fragment] subclass.
  */
-private const val TAG: String = "Pantalla4"
+private const val TAG: String = "pantalla_4"
 class pantalla_4 : Fragment(), (PostModel) -> Unit {
 
     private val firebaseRepo: FirebaseRepo = FirebaseRepo()
 
     private var postList: List <PostModel> = ArrayList()
+
 
     private val postListAdapter: PostListAdapter = PostListAdapter(postList,this)
 
@@ -34,6 +36,7 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d(TAG,"Se metio al fragmento")
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentPantalla4Binding>(
             inflater, R.layout.fragment_pantalla_4
@@ -58,7 +61,7 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
 
 //        Cargo los datos
         loadPostData()
-//        los ingreso al recyclerview
+
 
 
 
@@ -69,10 +72,21 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        Log.d(TAG,"on ActivityCreated")
+
         //        inicializar el recylcer view
         ofertasLaborales_list.layoutManager = LinearLayoutManager(context)
         ofertasLaborales_list.adapter = postListAdapter
     }
+
+
+
+
+
+
+
+
+
 
 //    Metodo para cargar todos los datos
     private fun loadPostData(){
@@ -84,20 +98,20 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
                 postList = it.result!!.toObjects(PostModel::class.java)
                 postListAdapter.postListItems = postList
                 postListAdapter.notifyDataSetChanged()
-//                    Log.d(TAG,"Usuario: ${it.result}")
+                    Log.d(TAG,"Usuario: ${it.result}")
             }else{
                 Log.d(TAG,"Error: ${it.exception!!.message}")
 
             }
         }
 
-//    Obtengo la informacion de la empresa de la oferta
+//    Obtengo la informacion de la empresa de la oferta//    Obtengo la informacion de la empresa de la oferta
 //    firebaseRepo.getEmpresa().addOnCompleteListener{
 //        if(it.isSuccessful){
-//            postList = it.result!!.toObjects(PostModel::class.java)
-//            postListAdapter.postListItems = postList
+//            postEmpresas = it.result!!.toObjects(PostEmpresas::class.java)
+//            postListAdapter.postEmpresasItems = postEmpresas
 //            postListAdapter.notifyDataSetChanged()
-//                    Log.d("Empresa","Empresa: ${it.result}")
+//                    Log.d(TAG,"Empresa: ${it.result}")
 //        }else{
 //            Log.d(TAG,"Error: ${it.exception!!.message}")
 //
@@ -112,18 +126,18 @@ class pantalla_4 : Fragment(), (PostModel) -> Unit {
 //        Log.d(TAG,"${p1.titulo}")
 //        (activity as MainActivity).supportActionBar?.title = (p1.titulo)
 
-        FirebaseAuth.getInstance().addAuthStateListener { user ->
+//        FirebaseAuth.getInstance().addAuthStateListener { user ->
 
-            if(user.uid != ""){
-                Log.d(TAG,"No se sampo: ${user}")
-                view?.findNavController()?.navigate(R.id.pantalla_7)
-            }else{
-                Log.d(TAG,"SI se sampo: ${user}")
-                findNavController().navigate(R.id.action_pantalla_4_to_pantalla_5)
+//            if(user.uid != ""){
+//                Log.d(TAG,"No se sampo: ${user}")
+//                view?.findNavController()?.navigate(R.id.pantalla_7)
+//            }else{
+//                Log.d(TAG,"SI se sampo: ${user}")
+                findNavController().navigate(R.id.pantalla_7)
 
 
-            }
-        }
+//            }
+//        }
 
     }
 
