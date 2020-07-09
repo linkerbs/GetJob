@@ -34,7 +34,7 @@ class pantalla_11 : Fragment() {
         }
 
         binding.btnOfertaLaboralEmpresa.setOnClickListener {view: View ->
-            view.findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_31)
+            view.findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_13)
         }
 
       //  setHasOptionsMenu(true)
