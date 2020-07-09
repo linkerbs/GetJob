@@ -94,9 +94,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_contra_again_empresa"
             android:layout_width="match_parent"
@@ -104,28 +101,19 @@
             android:ems="10"
             android:hint="Contraseña de nuevo"
             android:inputType="textPassword"
+            app:endIconMode="password_toggle"
+            app:helperText="al menos 8 caracteres"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:helperText="al menos 8 caracteres"
-            app:endIconMode="password_toggle"
             app:layout_constraintTop_toBottomOf="@+id/et_contra_empresa"
             app:layout_constraintVertical_bias="0.096">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_contra_again_empresas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:id="@+id/et_contra_again_empresas"
-                />
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
-
-
-
 
 
         <Button
@@ -133,14 +121,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="REGISTRARME"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.532"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_contra_again_empresa"
-            />
-
-
-
+            app:layout_constraintVertical_bias="0.565" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -148,6 +134,30 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_end="58dp" />
+
+        <ImageView
+            android:id="@+id/image_preview"
+            android:layout_width="80dp"
+            android:layout_height="66dp"
+            android:layout_marginBottom="33dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:layout_constraintBottom_toTopOf="@+id/bt_registro_empresa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.244"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_contra_again_empresa"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/bt_elegir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Elegir imagen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.43"
+            app:layout_constraintStart_toEndOf="@+id/image_preview"
+            app:layout_constraintTop_toBottomOf="@+id/et_contra_again_empresa" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

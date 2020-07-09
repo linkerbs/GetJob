@@ -4,12 +4,12 @@ import android.app.Activity
 import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.edenilson.get_job.databinding.FragmentPantalla9Binding
 import com.google.android.gms.tasks.OnCompleteListener
@@ -32,6 +32,9 @@ class pantalla_9 : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentPantalla9Binding>(
             inflater, R.layout.fragment_pantalla_9
             , container, false)
+
+
+
 
         binding.btRegistroUsuario.setOnClickListener { view: View ->
             mAuth = FirebaseAuth.getInstance();
