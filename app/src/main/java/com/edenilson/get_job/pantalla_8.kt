@@ -41,14 +41,14 @@ class pantalla_8 : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == 0  && resultCode == Activity.RESULT_OK && data != null)
-        {
+        if (requestCode == 0 && resultCode == Activity.RESULT_OK && data != null) {
             selectedPhoto = data.data
             val bitmap = MediaStore.Images.Media.getBitmap(activity?.contentResolver, selectedPhoto)
 
             image_preview.setImageBitmap(bitmap)
         }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,7 +70,7 @@ class pantalla_8 : Fragment() {
 
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
-            startActivityForResult(intent,0)
+            startActivityForResult(intent, 0)
 
         }
 
@@ -156,7 +156,7 @@ class pantalla_8 : Fragment() {
         return binding.root
     }
 
-    private fun uploadImage():String{
+    private fun uploadImage(): String {
         val filename = UUID.randomUUID().toString()
         val ref = FirebaseStorage.getInstance().getReference("/users/$filename")
         ref.putFile(selectedPhoto!!).addOnSuccessListener {
