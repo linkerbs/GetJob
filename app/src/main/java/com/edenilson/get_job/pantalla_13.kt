@@ -77,6 +77,7 @@ class pantalla_13 : Fragment() {
                             for (document in documents) {
                                 var nombre: String = document.getString("nombre")!!
                                 var foto: String = document.getString("foto")!!
+                                var correo: String = document.getString("correo")!!
 
                                 val oferta: MutableMap<String, Any> =
                                     HashMap()
@@ -88,7 +89,7 @@ class pantalla_13 : Fragment() {
                                 oferta["fecha_publicacion"] = java.util.Calendar.getInstance().time
                                 oferta["nombre_empresa"] = nombre
                                 oferta["foto"] = foto
-
+                                oferta["correo"] = correo
 
                                 db.collection("ofertas")
                                     .add(oferta)

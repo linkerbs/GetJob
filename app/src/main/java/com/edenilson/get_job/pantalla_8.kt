@@ -103,30 +103,7 @@ class pantalla_8 : Fragment() {
                                     Toast.LENGTH_SHORT
                                 ).show()
 
-                                val imagen = uploadImage()
-                                val usuario: MutableMap<String, Any> =
-                                    HashMap()
-                                usuario["nombre"] = nombre
-                                usuario["correo"] = correo
-                                usuario["tipo"] = "1"
-                                usuario["foto"] = imagen
-
-                                db.collection("usuarios")
-                                    .add(usuario)
-                                    .addOnSuccessListener { documentReference ->
-                                        Log.d(
-                                            TAG,
-                                            "Se agrego el documento con ID " + documentReference.id
-                                        )
-                                    }
-                                    .addOnFailureListener { e ->
-                                        Log.w(
-                                            TAG,
-                                            "C mamo algo",
-                                            e
-                                        )
-                                    }
-
+                                val imagen = uploadImage(nombre,correo)
 
                                 view.findNavController()
                                     .navigate(R.id.action_pantalla_8_to_pantalla_10)
@@ -156,14 +133,51 @@ class pantalla_8 : Fragment() {
         return binding.root
     }
 
-    private fun uploadImage(): String {
+    private fun uploadImage(nombre: String, correo: String ) {
         val filename = UUID.randomUUID().toString()
         val ref = FirebaseStorage.getInstance().getReference("/users/$filename")
-        ref.putFile(selectedPhoto!!).addOnSuccessListener {
+        var devolver: String = ""
+        val db = FirebaseFirestore.getInstance()
+        
+        ref.putFile(selectedPhoto!!).addOnSuccessListener { it ->
             Log.d("Registro", "Se subio la imagen: ${it.metadata?.path}")
+
+            ref.downloadUrl.addOnSuccessListener {
+                Log.d("Registro", "Se subio la imagen: $it")
+                devolver = it.toString()
+
+                val usuario: MutableMap<String, Any> =
+                    HashMap()
+                usuario["nombre"] = nombre
+                usuario["correo"] = correo
+                usuario["tipo"] = "1"
+                usuario["foto"] = devolver
+
+                db.collection("usuarios")
+                    .add(usuario)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(
+                            TAG,
+                            "Se agrego el documento con ID " + documentReference.id
+                        )
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(
+                            TAG,
+                            "C mamo algo",
+                            e
+                        )
+                    }
+
+
+
+            }
+
         }
-        return filename
+
+
     }
+
 
 }
 
