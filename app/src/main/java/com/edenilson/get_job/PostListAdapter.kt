@@ -3,6 +3,7 @@ package com.edenilson.get_job
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,14 +18,21 @@ import kotlinx.android.synthetic.main.fragment_pantalla_5.view.*
 import kotlinx.android.synthetic.main.ofertaslaborales_cards.view.*
 import kotlinx.coroutines.withContext
 
+private const val TAG: String = "PostListAdapter"
+
 class PostListAdapter(var postListItems: List<PostModel> , val clickListener:(PostModel)-> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class ImageViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         fun bind(postModel: PostModel,clickListener:(PostModel)-> Unit ){
 
-            itemView.oferta_titulo.text = postModel.titulo
-            itemView.empresa_nombre.text = postModel.nombre_empresa
-            itemView.vacantes_cantidad.text = "Vacantes: "+postModel.vacantes
+                itemView.oferta_titulo.text = postModel.titulo
+                itemView.empresa_nombre.text = postModel.nombre_empresa
+//                Log.d("asd", "Awuebo se sampo: ${postModel.nombre_empresa}")
+//
+
+
+//            itemView.vacantes_cantidad.text = "Vacantes: "+postModel.vacantes
+//            Log.d(TAG,"Nombre de la empresa: ${postModel.nombre_empresa}")
 
 //            mostramos la foto
             Glide.with(itemView.context).load(postModel.foto).into(itemView.empresa_foto)
@@ -64,7 +72,10 @@ class PostListAdapter(var postListItems: List<PostModel> , val clickListener:(Po
         return postListItems.size
     }
 
+
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
+
         (holder as ImageViewHolder).bind(postListItems[position],clickListener)
 
 //        holder.itemView.setOnClickListener{

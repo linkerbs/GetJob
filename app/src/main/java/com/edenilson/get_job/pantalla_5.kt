@@ -24,10 +24,10 @@ class pantalla_5 : Fragment() {
             inflater, R.layout.fragment_pantalla_5
             , container, false
         )
-
-        binding.tvVerMas.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_6)
-        }
+//  Boton de ver mas, se elimina porque tode se sampa el scroolview
+//        binding.tvVerMas.setOnClickListener { view: View ->
+//            view.findNavController().navigate(R.id.action_pantalla_5_to_pantalla_6)
+//        }
 
         (activity as MainActivity).supportActionBar?.title = ("Get Job")
 

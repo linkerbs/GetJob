@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.Timestamp
 
 class UserActivity : AppCompatActivity() {
 
@@ -56,10 +57,21 @@ class UserActivity : AppCompatActivity() {
     //    viewmodel para pasar los datos de la pantalla_24 a la pantalla_5
     class Communicator : ViewModel() {
 
-        val _nombre_empresa = MutableLiveData<Any>()
+        val _titulo = MutableLiveData<Any>()
         val _foto = MutableLiveData<Any>()
+        val _nombre_empresa = MutableLiveData<Any>()
+        val _fecha = MutableLiveData<Any>()
+//        val _pais = MutableLiveData<Any>()
         val _descripcion = MutableLiveData<Any>()
+        val _habilidades = MutableLiveData<Any>()
+        val _experiencia = MutableLiveData<Any>()
+        val _vacantes = MutableLiveData<Any>()
 
+
+        fun titulo(msg: kotlin.String) {
+            _titulo.setValue(msg)
+
+        }
         fun foto(msg: kotlin.String) {
             _foto.setValue(msg)
 
@@ -68,8 +80,28 @@ class UserActivity : AppCompatActivity() {
             _nombre_empresa.setValue(msg)
 
         }
+        fun fecha(msg: String) {
+            _fecha.setValue(msg)
+
+        }
+//        fun pais(msg: kotlin.String) {
+//            _pais.setValue(msg)
+//
+//        }
         fun descripcion(msg: kotlin.String) {
             _descripcion.setValue(msg)
+
+        }
+        fun habilidades(msg: kotlin.String) {
+            _habilidades.setValue(msg)
+
+        }
+        fun experiencia(msg: kotlin.String) {
+            _experiencia.setValue(msg)
+
+        }
+        fun vacantes(msg: kotlin.String) {
+            _vacantes.setValue(msg)
 
         }
     }

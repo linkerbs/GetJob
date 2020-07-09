@@ -31,22 +31,28 @@ class pantalla_5_3 : Fragment() {
             inflater, R.layout.fragment_pantalla_5
             , container, false
         )
-
-        binding.tvVerMas.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_5_3_to_pantalla_6_3)
-        }
-
-        (activity as UserActivity).supportActionBar?.title = ("Get Job")
+//  Boton de ver mas, se elimina porque tode se sampa el scroolview
+//        binding.tvVerMas.setOnClickListener { view: View ->
+//            view.findNavController().navigate(R.id.action_pantalla_5_3_to_pantalla_6_3)
+//        }
 
 
 //        Muestro los datos con ViewModel
-        val model= ViewModelProviders.of(activity!!).get(UserActivity.Communicator::class.java)
+        val model = ViewModelProviders.of(activity!!).get(UserActivity.Communicator::class.java)
+
+//        Asigno nombre de la activity
+        (activity as UserActivity).supportActionBar?.title = (model._titulo.value.toString())
+//        Asigno todos los valore a los textviews
         binding.tvNombreEmpresa.text = model._nombre_empresa.value.toString()
+//        binding.tvFechaPublicacion.text = model._fecha.value.toString()
         binding.tvDescripcionEmpleo.text = model._descripcion.value.toString()
+        binding.tvHabilidades?.text = model._habilidades.value.toString()
+        binding.tvExperiencia?.text = model._experiencia.value.toString()
+        binding.tvVacantes?.text = model._vacantes.value.toString()
         val imagen = model._foto.value.toString()
 
 
-            Glide.with(this).load(imagen).into(binding.imageView3)
+        Glide.with(this).load(imagen).into(binding.imageView3)
 //     Log.d("pantalla_5_3","${  Glide.with(this).load(model.message).into(imageView3)}")
 
 
@@ -58,7 +64,6 @@ class pantalla_5_3 : Fragment() {
 //        val Foto_empresa = intent.getStringExtra( "iFoto_empresa")
 
 
-
 //        tv_nombre_empresa.text = Nombre_oferta
 //        tv_nombre_empresa.text = Nombre_empresa
 //        tv_descripcion_empleo.text = Descripcion_empresa
@@ -66,16 +71,10 @@ class pantalla_5_3 : Fragment() {
 //        Glide.with(this).load(Foto_empresa).into(imageView3)
 
 
-
         return binding.root
 
 
     }
-
-
-
-
-
 
 
 }

@@ -14,6 +14,8 @@ import com.edenilson.get_job.databinding.FragmentPantalla4Binding
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_pantalla_4.*
 import androidx.lifecycle.ViewModelProviders
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 /**
@@ -25,6 +27,7 @@ class pantalla_24 : Fragment(), (PostModel) -> Unit {
     private val firebaseRepo: FirebaseRepo = FirebaseRepo()
 
     private var postList: List <PostModel> = ArrayList()
+
 
     private val postListAdapter: PostListAdapter = PostListAdapter(postList,this)
 
@@ -72,8 +75,8 @@ class pantalla_24 : Fragment(), (PostModel) -> Unit {
 
 
 
-        val usuario = FirebaseAuth.getInstance().currentUser?.uid
-        Log.d(TAG,"uSUARIO: ${usuario}")
+//        val usuario = FirebaseAuth.getInstance().currentUser?.uid
+//        Log.d(TAG,"uSUARIO: ${usuario}")
 //        val user = FirebaseAuth.getInstance().currentUser
 //        user?.let {
 //            val id = user.uid
@@ -114,9 +117,9 @@ class pantalla_24 : Fragment(), (PostModel) -> Unit {
 
     //    Metodo para cargar todos los datos
     private fun loadPostData(){
-        val uid = FirebaseAuth.getInstance().uid ?: ""
 
-//    Obtengo la informacion de la oferta laboral
+
+//    Obtengo la informacion de las oferta laborales
         firebaseRepo.getPostList().addOnCompleteListener{
             if(it.isSuccessful){
                 postList = it.result!!.toObjects(PostModel::class.java)
@@ -129,13 +132,14 @@ class pantalla_24 : Fragment(), (PostModel) -> Unit {
             }
         }
 
+
 //    Obtengo la informacion de la empresa de la oferta
 //    firebaseRepo.getEmpresa().addOnCompleteListener{
 //        if(it.isSuccessful){
 //            postList = it.result!!.toObjects(PostModel::class.java)
 //            postListAdapter.postListItems = postList
 //            postListAdapter.notifyDataSetChanged()
-//                    Log.d("Empresa","Empresa: ${it.result}")
+//                    Log.d(TAG,"Empresa: ${it.result}")
 //        }else{
 //            Log.d(TAG,"Error: ${it.exception!!.message}")
 //
@@ -151,14 +155,25 @@ class pantalla_24 : Fragment(), (PostModel) -> Unit {
 
     override fun invoke(p1: PostModel) {
 //        Esto es para utilizarlo con el modelView
+        model!!.titulo(p1.titulo)
         model!!.foto(p1.foto)
         model!!.nombre_empresa(p1.nombre_empresa)
+//        model!!.fecha(p1.fecha_publicacion)
+//        model!!.pais(p1.pais)
         model!!.descripcion(p1.descripcion)
-//        model!!.setMsgCommunicator(p1.nombre_empresa,p1.descripcion)
+        model!!.habilidades(p1.habilidades)
+        model!!.experiencia(p1.experiencia)
+        model!!.vacantes(p1.vacantes)
+//        Log.d(TAG,"A ver: ${p1.fecha_publicacion}")
+////        model!!.setMsgCommunicator(p1.nombre_empresa,p1.descripcion)
+//
+////        val prueba =  p1.vacantes
+//        Log.d(TAG,"a ver: ${model!!.foto(p1.foto)} si se sampo al invoke")
 
-//        val prueba =  p1.vacantes
-        Log.d(TAG,"a ver: ${model!!.foto(p1.foto)} si se sampo al invoke")
+//        Lo direcciona al otro fragmento
         findNavController().navigate(R.id.pantalla_5_3)
+//        Le cambia el titulo al otro fragmento
+//        (activity as UserActivity).supportActionBar?.title = (p1.nombre_empresa)
 
     }
 
