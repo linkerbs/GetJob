@@ -39,14 +39,7 @@ class pantalla_11 : Fragment() {
 
       //  setHasOptionsMenu(true)
         (activity as CompanyActivity).supportActionBar?.title = ("Mis ofertas")
-        val user = FirebaseAuth.getInstance().currentUser
-        user?.let {
-            val name = user.email
-            Toast.makeText(
-                activity, name,
-                Toast.LENGTH_LONG
-            ).show()
-        }
+
 
 
         return binding.root

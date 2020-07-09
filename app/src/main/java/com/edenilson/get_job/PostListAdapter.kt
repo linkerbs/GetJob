@@ -35,6 +35,8 @@ class PostListAdapter(var postListItems: List<PostModel> , val clickListener:(Po
 //            Log.d(TAG,"Nombre de la empresa: ${postModel.nombre_empresa}")
 
 //            mostramos la foto
+
+
             Glide.with(itemView.context).load(postModel.foto).into(itemView.empresa_foto)
 
 //            Esto seria cuando le de click le va enviar los datos a la pantalla5_3
@@ -87,7 +89,6 @@ class PostListAdapter(var postListItems: List<PostModel> , val clickListener:(Po
 //            val intent = Intent(holder.itemView.context, pantalla_24::class.java)
 //
 //            intent.putExtra("iFoto_empresa", gFoto_empresa)
-//
 //
 //
 //            holder.itemView.context.startActivity(intent)
