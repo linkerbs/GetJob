@@ -5,6 +5,9 @@
     tools:context=".pantalla_9">
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,18 +17,16 @@
         android:layout_marginEnd="@dimen/margin_view">
 
 
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Crea una cuenta para encontrar las mejores ofertas laborales"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029999971" />
+            app:layout_constraintTop_toBottomOf="@+id/bt_elegir" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_nombre_usuario"
@@ -127,15 +128,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_contra_again_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_marginTop="16dp"
             android:hint="Contraseña de nuevo"
             app:endIconMode="password_toggle"
             app:helperText="al menos 8 caracteres"
@@ -143,14 +141,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_contra_usuario"
-            app:layout_constraintVertical_bias="0.096">
+            app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.textfield.TextInputEditText
 
+                android:id="@+id/et_contra_again_usuarios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:id="@+id/et_contra_again_usuarios"
 
                 />
 
@@ -162,12 +160,14 @@
             android:id="@+id/bt_registro_usuario"
             android:layout_width="157dp"
             android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/margin_80dp"
             android:text="REGISTRARME"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_contra_again_usuario"
-            app:layout_constraintVertical_bias="0.578" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -176,9 +176,29 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_end="58dp" />
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            app:srcCompat="@drawable/ic_image_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bt_elegir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="elegir imagen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+    </ScrollView>
 
 </layout>

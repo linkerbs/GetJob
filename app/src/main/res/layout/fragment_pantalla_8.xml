@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".pantalla_8">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,18 +17,36 @@
         android:layout_marginTop="@dimen/margin_view"
         android:layout_marginEnd="@dimen/margin_view">
 
+        <ImageView
+            android:id="@+id/image_preview"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bt_elegir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Elegir imagen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_preview" />
+
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:text="Crea una cuenta para encontrar los mejores profesionales"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toBottomOf="@+id/bt_elegir" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_nombre_empresa"
@@ -45,7 +67,6 @@
                 android:id="@+id/et_nombre_empresas"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_correo_empresa"
             android:layout_width="match_parent"
@@ -64,11 +85,6 @@
                 android:inputType="textEmailAddress"
                 android:id="@+id/et_correo_empresas"/>
         </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_contra_empresa"
@@ -93,7 +109,6 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_contra_again_empresa"
             android:layout_width="match_parent"
@@ -115,11 +130,12 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <Button
             android:id="@+id/bt_registro_empresa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/margin_80dp"
             android:text="REGISTRARME"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,39 +144,9 @@
             app:layout_constraintTop_toBottomOf="@+id/et_contra_again_empresa"
             app:layout_constraintVertical_bias="0.565" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="58dp" />
-
-        <ImageView
-            android:id="@+id/image_preview"
-            android:layout_width="80dp"
-            android:layout_height="66dp"
-            android:layout_marginBottom="33dp"
-            android:src="@android:drawable/ic_menu_gallery"
-            app:layout_constraintBottom_toTopOf="@+id/bt_registro_empresa"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.244"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_contra_again_empresa"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/bt_elegir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Elegir imagen"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.43"
-            app:layout_constraintStart_toEndOf="@+id/image_preview"
-            app:layout_constraintTop_toBottomOf="@+id/et_contra_again_empresa" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </ScrollView>
 
 </layout>
