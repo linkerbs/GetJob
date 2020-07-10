@@ -2,7 +2,10 @@ package com.edenilson.get_job
 
 import android.app.Activity
 import android.content.ContentValues
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +20,11 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import kotlinx.android.synthetic.main.fragment_pantalla_9.*
+import java.util.*
+import kotlin.collections.HashMap
 
 /**
  * A simple [Fragment] subclass.
@@ -24,6 +32,22 @@ import com.google.firebase.firestore.FirebaseFirestore
 class pantalla_9 : Fragment() {
 
     private lateinit var mAuth: FirebaseAuth
+    private val PICK_IMAGE_REQUEST = 71
+    private var filePath: Uri? = null
+    private var firebaseStore: FirebaseStorage? = null
+    private var storageReference: StorageReference? = null
+    var selectedPhoto: Uri? = null
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 0 && resultCode == Activity.RESULT_OK && data != null) {
+            selectedPhoto = data.data
+            val bitmap = MediaStore.Images.Media.getBitmap(activity?.contentResolver, selectedPhoto)
+
+            imageView.setImageBitmap(bitmap)
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,9 +55,17 @@ class pantalla_9 : Fragment() {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentPantalla9Binding>(
             inflater, R.layout.fragment_pantalla_9
-            , container, false)
+            , container, false
+        )
 
 
+        binding.btElegir?.setOnClickListener { view: View ->
+
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, 0)
+
+        }
 
 
         binding.btRegistroUsuario.setOnClickListener { view: View ->
@@ -46,14 +78,11 @@ class pantalla_9 : Fragment() {
             var contra: String = binding.etContraUsuarios?.text.toString()
             var contra2: String = binding.etContraAgainUsuarios?.text.toString()
 
-            if(nombre.isEmpty() || correo.isEmpty() || contra.isEmpty() || contra2.isEmpty() || apellido.isEmpty())
-            {
+            if (nombre.isEmpty() || correo.isEmpty() || contra.isEmpty() || contra2.isEmpty() || apellido.isEmpty()) {
                 Toast.makeText(activity, "Rellene todos los campos", Toast.LENGTH_LONG).show()
-            }
-            else if (contra != contra2){
+            } else if (contra != contra2) {
                 Toast.makeText(activity, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show()
-            }
-            else {
+            } else {
                 mAuth.createUserWithEmailAndPassword(correo, contra)
                     .addOnCompleteListener(
                         Activity(),
@@ -67,38 +96,22 @@ class pantalla_9 : Fragment() {
                                     Toast.LENGTH_SHORT
                                 ).show()
 
-                                val usuario: MutableMap<String, Any> =
-                                    HashMap()
-                                usuario["nombre"] = nombre
-                                usuario["apellido"] = apellido
-                                usuario["correo"] = correo
-                                usuario["tipo"] = "2"
+                                uploadImage(nombre, correo, apellido)
 
-                                db.collection("usuarios")
-                                    .add(usuario)
-                                    .addOnSuccessListener { documentReference ->
-                                        Log.d(
-                                            ContentValues.TAG,
-                                            "Se agrego el documento con ID " + documentReference.id
-                                        )
-                                    }
-                                    .addOnFailureListener { e ->
-                                        Log.w(
-                                            ContentValues.TAG,
-                                            "C mamo algo",
-                                            e
-                                        )
-                                    }
-                                view.findNavController().navigate(R.id.action_pantalla_9_to_pantalla_10)
+                                view.findNavController()
+                                    .navigate(R.id.action_pantalla_9_to_pantalla_10)
 
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Log.w(ContentValues.TAG, "createUserWithEmail:failure", task.exception)
+                                Log.w(
+                                    ContentValues.TAG,
+                                    "createUserWithEmail:failure",
+                                    task.exception
+                                )
                                 Toast.makeText(
                                     activity, "Fallo en la creacion.",
                                     Toast.LENGTH_SHORT
                                 ).show()
-
 
 
                             }
@@ -107,11 +120,55 @@ class pantalla_9 : Fragment() {
                         })
             }
 
-            
-            
+
         }
         (activity as MainActivity).supportActionBar?.title = ("Registro")
         return binding.root
     }
 
+
+    private fun uploadImage(nombre: String, correo: String, apellido: String) {
+        val filename = UUID.randomUUID().toString()
+        val ref = FirebaseStorage.getInstance().getReference("/users/$filename")
+        var devolver: String = ""
+        val db = FirebaseFirestore.getInstance()
+
+        ref.putFile(selectedPhoto!!).addOnSuccessListener { it ->
+            Log.d("Registro", "Se subio la imagen: ${it.metadata?.path}")
+
+            ref.downloadUrl.addOnSuccessListener {
+                Log.d("Registro", "Se subio la imagen: $it")
+                devolver = it.toString()
+
+                val usuario: MutableMap<String, Any> =
+                    HashMap()
+                usuario["nombre"] = nombre
+                usuario["apellido"] = apellido
+                usuario["correo"] = correo
+                usuario["tipo"] = "1"
+                usuario["foto"] = devolver
+
+                db.collection("usuarios")
+                    .add(usuario)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(
+                            ContentValues.TAG,
+                            "Se agrego el documento con ID " + documentReference.id
+                        )
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(
+                            ContentValues.TAG,
+                            "C mamo algo",
+                            e
+                        )
+                    }
+
+
+            }
+
+        }
+    }
 }
+
+
