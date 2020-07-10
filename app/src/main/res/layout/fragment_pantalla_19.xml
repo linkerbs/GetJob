@@ -26,27 +26,7 @@
             tools:ignore="VectorDrawableCompat" />
 
 
-        <Button
-            android:id="@+id/btn_modificar_perfil_usuario"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="108dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
 
-            android:inputType="textMultiLine"
-            android:shadowColor="@color/colorPrimaryDark"
-            android:text="editar perfil"
-            android:textColor="#000000"
-            android:textColorHighlight="#3F51B5"
-            android:textColorHint="#3F51B5"
-            android:textColorLink="#3F51B5"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.328"
-            app:layout_constraintStart_toEndOf="@+id/btCerrar"
-            app:layout_constraintTop_toBottomOf="@+id/tv_descripcion_completa_usuario"
-            app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_ubicacion_usuario"
@@ -124,10 +104,23 @@
             android:text="Cerrar Sesion"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.176"
+            app:layout_constraintHorizontal_bias="0.212"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_descripcion_completa_usuario"
-            app:layout_constraintVertical_bias="0.44" />
+            app:layout_constraintVertical_bias="0.387" />
+
+        <Button
+            android:id="@+id/btn_modificar_perfil_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="editar perfil
+"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.792"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descripcion_completa_usuario"
+            app:layout_constraintVertical_bias="0.387" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
