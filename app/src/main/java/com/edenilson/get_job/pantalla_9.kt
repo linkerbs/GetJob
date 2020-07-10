@@ -145,7 +145,7 @@ class pantalla_9 : Fragment() {
                 usuario["nombre"] = nombre
                 usuario["apellido"] = apellido
                 usuario["correo"] = correo
-                usuario["tipo"] = "1"
+                usuario["tipo"] = "2"
                 usuario["foto"] = devolver
 
                 db.collection("usuarios")

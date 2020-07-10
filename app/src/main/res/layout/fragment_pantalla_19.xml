@@ -7,59 +7,50 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_view"
+        android:layout_marginEnd="@dimen/margin_view"
+        android:layout_marginTop="@dimen/margin_view"
 
         >
 
 
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/imgBtn_perfil_fondo_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#68708A"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_fotoPerfil"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_image_black"
             tools:ignore="VectorDrawableCompat" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/imgBtn_perfil_usuario"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.096"
-            app:srcCompat="@drawable/ic_person"
-            tools:ignore="VectorDrawableCompat" />
 
         <Button
             android:id="@+id/btn_modificar_perfil_usuario"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:drawableRight="@drawable/ic_edit_black"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:layout_marginEnd="8dp"
             android:ems="10"
-            android:gravity="start|top"
+
             android:inputType="textMultiLine"
             android:shadowColor="@color/colorPrimaryDark"
+            android:text="editar perfil"
             android:textColor="#000000"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgBtn_perfil_fondo_usuario" />
-
+            app:layout_constraintHorizontal_bias="0.328"
+            app:layout_constraintStart_toEndOf="@+id/btCerrar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descripcion_completa_usuario"
+            app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_ubicacion_usuario"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_wide"
             android:layout_marginTop="8dp"
@@ -75,7 +66,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_nombre_usuario"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_wide"
             android:layout_marginTop="16dp"
@@ -84,9 +75,9 @@
             android:text="Nombre del usuario"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgBtn_perfil_usuario"
+            app:layout_constraintTop_toBottomOf="@+id/img_fotoPerfil"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -105,7 +96,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_descripcion_completa_usuario"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_wide"
             android:layout_marginTop="8dp"
@@ -133,8 +124,10 @@
             android:text="Cerrar Sesion"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.176"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgBtn_perfil_usuario" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_descripcion_completa_usuario"
+            app:layout_constraintVertical_bias="0.44" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

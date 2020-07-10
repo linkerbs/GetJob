@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import com.bumptech.glide.Glide
 import com.edenilson.get_job.databinding.FragmentPantalla19Binding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -16,6 +18,8 @@ import com.google.firebase.ktx.Firebase
  * A simple [Fragment] subclass.
  */
 class pantalla_19 : Fragment() {
+    //    Esto es para utilizarlo con el modelView con la data del usuario
+    private var modelPerfil: UserActivity.getPerfil? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +42,15 @@ class pantalla_19 : Fragment() {
             val intent = Intent(activity, MainActivity::class.java)
             activity!!.startActivity(intent)
         }
+        modelPerfil = ViewModelProviders.of(activity!!).get(UserActivity.getPerfil::class.java)
+
+        //        Esto es para utilizarlo con modelView
+//        los sampo a los Input
+        binding.tvNombreUsuario?.text = modelPerfil!!._nombre.value.toString()
+//        Aqui iria la descripcion completa del usuario, hay que agregar al viewm model el campo
+//        binding.tvDescripcionCompletaUsuario.text = modelPerfil!!._nombre.value.toString()
+        val imagen = modelPerfil!!._foto.value.toString()
+        binding.imgFotoPerfil?.let { Glide.with(this).load(imagen).into(it) }
         return binding.root
 
 
