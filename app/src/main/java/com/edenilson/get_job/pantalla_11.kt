@@ -113,7 +113,8 @@ class pantalla_11 : Fragment(), (PostModel) -> Unit {
     }
 
     override fun invoke(p1: PostModel) {
-        findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_13)
+//        findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_13)
+
     }
 
 

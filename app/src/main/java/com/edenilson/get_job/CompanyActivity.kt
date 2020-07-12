@@ -19,7 +19,7 @@ class CompanyActivity : AppCompatActivity() {
 
     val firebaseFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     //    Esto es para utilizarlo con el modelView con la data del usuario
-    private var modelPerfil: UserActivity.getPerfil? = null
+    private var modelPerfil: CompanyActivity.getPerfil? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,7 @@ class CompanyActivity : AppCompatActivity() {
 
         //        llevo la informacion al fragmento
 
-        modelPerfil = ViewModelProviders.of(this).get(UserActivity.getPerfil::class.java)
+        modelPerfil = ViewModelProviders.of(this).get(CompanyActivity.getPerfil::class.java)
 
         val user = FirebaseAuth.getInstance().currentUser
         user?.let {
@@ -55,6 +55,8 @@ class CompanyActivity : AppCompatActivity() {
 //                            Glide.with(this).load(document.getString("foto")).into(binding.imgBtnPerfilUsuario)
                             document.getString("nombre")?.let { it1 -> modelPerfil?.nombre(it1) }
                             document.getString("foto")?.let { it1 -> modelPerfil?.foto(it1) }
+                            document.getString("pais")?.let { it1 -> modelPerfil?.pais(it1) }
+                            document.getString("descripcion")?.let { it1 -> modelPerfil?.descripcion(it1) }
 //                            modelPerfil?.nombre(document.getString("nombre"))
                         }
                     }
@@ -103,6 +105,8 @@ class CompanyActivity : AppCompatActivity() {
             val _nombre = MutableLiveData<Any>()
             val _correo = MutableLiveData<Any>()
             val _foto = MutableLiveData<Any>()
+            val _pais = MutableLiveData<Any>()
+            val _descripcion = MutableLiveData<Any>()
 
 
             fun nombre(msg: kotlin.String) {
@@ -117,6 +121,14 @@ class CompanyActivity : AppCompatActivity() {
 
             fun foto(msg: kotlin.String) {
                 _foto.setValue(msg)
+
+            }
+            fun pais(msg: kotlin.String) {
+                _pais.setValue(msg)
+
+            }
+            fun descripcion(msg: kotlin.String) {
+                _descripcion.setValue(msg)
 
             }
         }

@@ -32,17 +32,15 @@
             tools:ignore="VectorDrawableCompat" />
 
 
-
-
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_ubicacion_usuario"
+            android:id="@+id/tv_pais"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="@dimen/margin_wide"
             android:gravity="center"
-            android:text="Nombre del pais"
+            android:text="Edita tu perfil para ingresar el nombre del pais de nacimiento"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +76,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_ubicacion_usuario" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_pais" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_descripcion_completa_usuario"
@@ -88,7 +86,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/margin_wide"
             android:gravity="center"
-            android:text="Breve descripcion de tu persona"
+            android:text="Edita tu perfil para ingresa una breve descripcion de tu persona ."
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

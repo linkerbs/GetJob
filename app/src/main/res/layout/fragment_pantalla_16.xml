@@ -33,7 +33,6 @@
             tools:ignore="VectorDrawableCompat" />
 
 
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_ubicacion_empresa"
             android:layout_width="0dp"
@@ -42,7 +41,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/margin_wide"
             android:gravity="center"
-            android:text="Nombre del pais"
+            android:text="Edita tu perfil para ingresar el nombre del pais de su empresa"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +89,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/margin_wide"
             android:gravity="center"
-            android:text="Escriba una breve descripcion de su empresa"
+            android:text="Edita tu perfil para ingresa una breve descripcion de la empresa."
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
