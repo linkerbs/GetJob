@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -28,6 +29,8 @@ class pantalla_11 : Fragment(), (PostModel) -> Unit {
     private val firebaseRepo: FirebaseRepo = FirebaseRepo()
     private var postList: List<PostModel> = ArrayList()
     private val postListAdapter: PostListAdapter = PostListAdapter(postList, this)
+    //    Esto es para utilizarlo con el modelView
+    private var model: CompanyActivity.Communicator? = null
 
     private lateinit var mAuth: FirebaseAuth
     override fun onCreateView(
@@ -56,6 +59,8 @@ class pantalla_11 : Fragment(), (PostModel) -> Unit {
         //  setHasOptionsMenu(true)
         (activity as CompanyActivity).supportActionBar?.title = ("Mis ofertas")
 // -----------------------------       reciclerview---------------------------------------------------------------
+
+        model = ViewModelProviders.of(activity!!).get(CompanyActivity.Communicator::class.java)
 
 
 //        Cargo los datos
@@ -117,7 +122,18 @@ class pantalla_11 : Fragment(), (PostModel) -> Unit {
     }
 
     override fun invoke(p1: PostModel) {
-//        findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_13)
+        //        Esto es para utilizarlo con el modelView
+        model!!.titulo(p1.titulo)
+        model!!.foto(p1.foto)
+        model!!.nombre_empresa(p1.nombre_empresa)
+//        model!!.fecha(p1.fecha_publicacion)
+//        model!!.pais(p1.pais)
+        model!!.descripcion(p1.descripcion)
+        model!!.habilidades(p1.habilidades)
+        model!!.experiencia(p1.experiencia)
+        model!!.vacantes(p1.vacantes)
+
+        findNavController().navigate(R.id.pantalla_33)
 
     }
 

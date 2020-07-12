@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:id="@+id/tv_tituloOferta"
+                android:id="@+id/input_tituloOferta"
 
                 />
 
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:id="@+id/tvDescripcionOferta"
+                android:id="@+id/input_Descripcion"
 
                 />
 
@@ -131,7 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:id="@+id/tvHabilidades"
+                android:id="@+id/input_Habilidades"
 
                 />
 
@@ -155,18 +155,21 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_experiencia"
-            android:layout_width="234dp"
-            android:layout_height="61dp"
+            android:layout_width="148dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ems="10"
-            android:hint="2,4,6"
+            android:hint="1 ,2, mes,año"
             android:inputType="number"
             app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/label_experiencia">
 
             <com.google.android.material.textfield.TextInputEditText
 
+                android:id="@+id/input_Experiencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -185,7 +188,7 @@
             android:hint="Meses"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.653"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/layout_experiencia"
             app:layout_constraintTop_toBottomOf="@+id/label_experiencia" />
 
@@ -222,6 +225,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:id="@+id/input_Vacantes"
 
                 />
 
