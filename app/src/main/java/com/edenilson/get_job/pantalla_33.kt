@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.edenilson.get_job.databinding.FragmentPantalla33Binding
 
 /**
  * A simple [Fragment] subclass.
@@ -16,7 +18,16 @@ class pantalla_33 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pantalla_33, container, false)
+        val binding = DataBindingUtil.inflate<FragmentPantalla33Binding>(
+            inflater, R.layout.fragment_pantalla_33,
+            container, false
+        )
+
+        
+
+        (activity as CompanyActivity).supportActionBar?.title = ("Mis Ofertas")
+        return binding.root
+
     }
 
 }
