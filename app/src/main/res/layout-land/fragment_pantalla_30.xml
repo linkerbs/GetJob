@@ -5,146 +5,166 @@
     tools:context=".pantalla_30">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent">
 
-        >
-
-
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/imageButton3"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#68708A"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_image_black"
-            tools:ignore="VectorDrawableCompat" />
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_view"
+            android:layout_marginEnd="@dimen/margin_view"
+            android:layout_marginTop="@dimen/margin_view"
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.096"
-            app:srcCompat="@drawable/ic_edit_black"
-            tools:ignore="VectorDrawableCompat" />
+            >
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tv_nombre_usuario"
-            android:layout_width="274dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:gravity="center"
-            android:hint="Nombres"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-            tools:ignore="MissingConstraints">
 
-            <com.google.android.material.textfield.TextInputEditText
+
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_fotoPerfil"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_image_black"
+                tools:ignore="VectorDrawableCompat" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_nombre_usuario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:hint="Nombres"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_cambiarFoto"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_Nombre"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_apellido_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:hint="Apellidos"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nombre_usuario"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_Apellido"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tv_apellido_usuario"
-            android:layout_width="274dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="Apellidos"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-            tools:ignore="MissingConstraints">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_ubicacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:hint="Nombre del pais de nacimiento"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_apellido_usuario"
+                tools:ignore="MissingConstraints">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tv_ubicacion"
-            android:layout_width="274dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:hint="Nombre del pais"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_nombre_usuario"
-            tools:ignore="MissingConstraints">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_Pais"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
+
+            <TextView
+                android:id="@+id/tv_descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Descripción"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ubicacion" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tv_descripcion_completa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:hint="Breve descripcion de tu persona"
+                android:inputType="textMultiLine"
+                android:text="Ingresa una breve descripcion de tu persona"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_descripcion"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/input_Descripcion"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-        <TextView
-            android:id="@+id/tv_descripcion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Descripción"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
-            app:layout_constraintTop_toBottomOf="@+id/tv_apellido_usuario" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tv_descripcion_completa"
-            android:layout_width="332dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="Breve descripcion de tu persona"
-            android:inputType="textMultiLine"
-            android:text="Breve descripcion de su empresa"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
-            app:layout_constraintTop_toBottomOf="@+id/tv_descripcion"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="MissingConstraints">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="@dimen/margin_80dp"
+                android:text="GUARDAR"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_descripcion_completa"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/margin_end_guide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp" />
+            <Button
+                android:id="@+id/btn_cambiarFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="actualizar foto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_fotoPerfil" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="58dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </layout>

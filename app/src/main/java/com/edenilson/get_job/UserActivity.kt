@@ -17,8 +17,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 private const val TAG: String = "UserActivity"
+
 class UserActivity : AppCompatActivity() {
     val firebaseFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+
     //    Esto es para utilizarlo con el modelView con la data del usuario
     private var modelPerfil: UserActivity.getPerfil? = null
 
@@ -37,14 +39,14 @@ class UserActivity : AppCompatActivity() {
         findViewById<BottomNavigationView>(R.id.bottomNav)
             .setupWithNavController(NavController)
 
-//        llevo la informacion al fragmento
+//        llevo la informacion a la pantalla_19 y pantalla_30
 
         modelPerfil = ViewModelProviders.of(this).get(UserActivity.getPerfil::class.java)
 
         val user = FirebaseAuth.getInstance().currentUser
         user?.let {
             val correo = user.email
-            Log.d(TAG,"Usuario: ${user.uid}" )
+            Log.d(TAG, "Usuario: ${user.uid}")
 
             //    Obtengo la informacion de la oferta laboral
             if (correo != null) {
@@ -57,7 +59,26 @@ class UserActivity : AppCompatActivity() {
                             Log.d(TAG, "${document.id} => ${document.data}")
 //                            binding.tvNombreUsuario.text = document.getString("nombre")
 //                            Glide.with(this).load(document.getString("foto")).into(binding.imgBtnPerfilUsuario)
-                            ("${document.getString("nombre") } ${document.getString("apellido")}")?.let { it1 -> modelPerfil?.nombre(it1) }
+                            ("${document.getString("nombre")} ")?.let { it1 ->
+                                modelPerfil?.nombre(
+                                    it1
+                                )
+                            }
+                            ("${document.getString("apellido")}")?.let { it1 ->
+                                modelPerfil?.apellido(
+                                    it1
+                                )
+                            }
+                            ("${document.getString("pais")}")?.let { it1 ->
+                                modelPerfil?.pais(
+                                    it1
+                                )
+                            }
+                            ("${document.getString("descripcion")}")?.let { it1 ->
+                                modelPerfil?.descripcion(
+                                    it1
+                                )
+                            }
                             document.getString("foto")?.let { it1 -> modelPerfil?.foto(it1) }
 //                            modelPerfil?.nombre(document.getString("nombre"))
                         }
@@ -101,6 +122,7 @@ class UserActivity : AppCompatActivity() {
         val _foto = MutableLiveData<Any>()
         val _nombre_empresa = MutableLiveData<Any>()
         val _fecha = MutableLiveData<Any>()
+
         //        val _pais = MutableLiveData<Any>()
         val _descripcion = MutableLiveData<Any>()
         val _habilidades = MutableLiveData<Any>()
@@ -112,18 +134,22 @@ class UserActivity : AppCompatActivity() {
             _titulo.setValue(msg)
 
         }
+
         fun foto(msg: kotlin.String) {
             _foto.setValue(msg)
 
         }
+
         fun nombre_empresa(msg: kotlin.String) {
             _nombre_empresa.setValue(msg)
 
         }
+
         fun fecha(msg: String) {
             _fecha.setValue(msg)
 
         }
+
         //        fun pais(msg: kotlin.String) {
 //            _pais.setValue(msg)
 //
@@ -132,31 +158,42 @@ class UserActivity : AppCompatActivity() {
             _descripcion.setValue(msg)
 
         }
+
         fun habilidades(msg: kotlin.String) {
             _habilidades.setValue(msg)
 
         }
+
         fun experiencia(msg: kotlin.String) {
             _experiencia.setValue(msg)
 
         }
+
         fun vacantes(msg: kotlin.String) {
             _vacantes.setValue(msg)
 
         }
     }
 
+    //    Viewmodel para pasar los datos a la pantalla_19 y pantalla_30
     class getPerfil : ViewModel() {
 
 
         val _nombre = MutableLiveData<Any>()
+        val _apellido = MutableLiveData<Any>()
         val _correo = MutableLiveData<Any>()
+        val _pais = MutableLiveData<Any>()
+        val _descripcion = MutableLiveData<Any>()
         val _foto = MutableLiveData<Any>()
-
 
 
         fun nombre(msg: kotlin.String) {
             _nombre.setValue(msg)
+
+        }
+
+        fun apellido(msg: kotlin.String) {
+            _apellido.setValue(msg)
 
         }
 
@@ -169,11 +206,17 @@ class UserActivity : AppCompatActivity() {
             _foto.setValue(msg)
 
         }
+        fun pais(msg: kotlin.String) {
+            _pais.setValue(msg)
+
+        }
+        fun descripcion(msg: kotlin.String) {
+            _descripcion.setValue(msg)
+
+        }
 
 
     }
-
-
 
 
 }

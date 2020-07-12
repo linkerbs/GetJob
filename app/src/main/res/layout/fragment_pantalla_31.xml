@@ -182,7 +182,6 @@
             android:layout_width="189dp"
             android:layout_height="68dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="192dp"
             android:hint="Meses"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
@@ -232,9 +231,10 @@
         <Button
 
             android:id="@+id/btn_guardar"
-            android:layout_width="135dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="@dimen/margin_80dp"
             android:text="guardar"
             app:layout_constraintBottom_toBottomOf="parent"
