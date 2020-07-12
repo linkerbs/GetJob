@@ -37,7 +37,7 @@ class pantalla_5_3 : Fragment() {
 //        }
 
 
-//        Muestro los datos con ViewModel
+//        Muestro los datos con ViewModel del USUARIO
         val model = ViewModelProviders.of(activity!!).get(UserActivity.Communicator::class.java)
 
 //        Asigno nombre de la activity

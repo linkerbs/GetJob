@@ -190,7 +190,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/label_vacantes" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_editar"
                 style="@style/Widget.MaterialComponents.Button.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
@@ -208,7 +208,7 @@
                 app:layout_constraintVertical_bias="0.19" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn_eliminar"
                 style="@style/Widget.MaterialComponents.Button.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
@@ -219,7 +219,7 @@
                 android:textSize="6pt"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/button"
+                app:layout_constraintStart_toEndOf="@+id/btn_editar"
                 app:layout_constraintTop_toBottomOf="@+id/tv_vacantes"
                 app:layout_constraintVertical_bias="0.191" />
 

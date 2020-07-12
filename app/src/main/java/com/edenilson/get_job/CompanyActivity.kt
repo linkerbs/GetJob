@@ -33,7 +33,7 @@ class CompanyActivity : AppCompatActivity() {
         findViewById<BottomNavigationView>(R.id.bottomNav)
             .setupWithNavController(NavController)
 
-        //        llevo la informacion al fragmento
+        //        llevo la informacion al fragmento para el PERFIL DEL USUARIO
 
         modelPerfil = ViewModelProviders.of(this).get(CompanyActivity.getPerfil::class.java)
 
@@ -132,6 +132,67 @@ class CompanyActivity : AppCompatActivity() {
 
             }
         }
+
+
+    //    viewmodel para pasar los datos de la pantalla_11 a la pantalla_33
+    class Communicator : ViewModel() {
+
+        val _titulo = MutableLiveData<Any>()
+        val _foto = MutableLiveData<Any>()
+        val _nombre_empresa = MutableLiveData<Any>()
+        val _fecha = MutableLiveData<Any>()
+
+        //        val _pais = MutableLiveData<Any>()
+        val _descripcion = MutableLiveData<Any>()
+        val _habilidades = MutableLiveData<Any>()
+        val _experiencia = MutableLiveData<Any>()
+        val _vacantes = MutableLiveData<Any>()
+
+
+        fun titulo(msg: kotlin.String) {
+            _titulo.setValue(msg)
+
+        }
+
+        fun foto(msg: kotlin.String) {
+            _foto.setValue(msg)
+
+        }
+
+        fun nombre_empresa(msg: kotlin.String) {
+            _nombre_empresa.setValue(msg)
+
+        }
+
+        fun fecha(msg: String) {
+            _fecha.setValue(msg)
+
+        }
+
+        //        fun pais(msg: kotlin.String) {
+//            _pais.setValue(msg)
+//
+//        }
+        fun descripcion(msg: kotlin.String) {
+            _descripcion.setValue(msg)
+
+        }
+
+        fun habilidades(msg: kotlin.String) {
+            _habilidades.setValue(msg)
+
+        }
+
+        fun experiencia(msg: kotlin.String) {
+            _experiencia.setValue(msg)
+
+        }
+
+        fun vacantes(msg: kotlin.String) {
+            _vacantes.setValue(msg)
+
+        }
+    }
 
 
 
