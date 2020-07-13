@@ -23,6 +23,7 @@ class UserActivity : AppCompatActivity() {
 
     //    Esto es para utilizarlo con el modelView con la data del usuario
     private var modelPerfil: UserActivity.getPerfil? = null
+    private var modelFavorito: UserActivity.Communicator? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +47,9 @@ class UserActivity : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
         user?.let {
             val correo = user.email
-            Log.d(TAG, "Usuario: ${user.uid}")
+//            Log.d(TAG, "Usuario: ${user.uid}")
 
-            //    Obtengo la informacion de la oferta laboral
+//    Obtengo la informacion del perfil del USUARIO
             if (correo != null) {
 
                 firebaseFirestore.collection("usuarios")
@@ -56,7 +57,7 @@ class UserActivity : AppCompatActivity() {
                     .get()
                     .addOnSuccessListener { documents ->
                         for (document in documents) {
-                            Log.d(TAG, "${document.id} => ${document.data}")
+//                            Log.d(TAG, "${document.id} => ${document.data}")
 //                            binding.tvNombreUsuario.text = document.getString("nombre")
 //                            Glide.with(this).load(document.getString("foto")).into(binding.imgBtnPerfilUsuario)
                             ("${document.getString("nombre")} ")?.let { it1 ->
@@ -79,6 +80,11 @@ class UserActivity : AppCompatActivity() {
                                     it1
                                 )
                             }
+                            ("${document.getString("correo")}")?.let { it1 ->
+                                modelPerfil?.correo(
+                                    it1
+                                )
+                            }
                             document.getString("foto")?.let { it1 -> modelPerfil?.foto(it1) }
 //                            modelPerfil?.nombre(document.getString("nombre"))
                         }
@@ -90,8 +96,76 @@ class UserActivity : AppCompatActivity() {
 
 
         }
+//---------------------------------------------------------------------------------------------
+//Seccion para traer la data de favoritos
+        //        llevo la informacion a la pantalla_23
 
-
+//        modelFavorito = ViewModelProviders.of(this).get(UserActivity.Communicator::class.java)
+//
+////        ocupo el mismo user de arribita
+//        user?.let {
+//            val correo = user.email
+//            Log.d(TAG, "Usuario para favoritos: ${user.uid}")
+//
+////    Obtengo la informacion del perfil del USUARIO
+//            if (correo != null) {
+//
+//                firebaseFirestore.collection("ofertas")
+//                    .whereArrayContains("usuarios", correo)
+//                    .get()
+//                    .addOnSuccessListener { documents ->
+//                        for (document in documents) {
+//                            Log.d(TAG,"Desde aqui recibo la data de favoritos")
+//                            Log.d(TAG, "${document.id} => ${document.data}")
+////                            binding.tvNombreUsuario.text = document.getString("nombre")
+////                            Glide.with(this).load(document.getString("foto")).into(binding.imgBtnPerfilUsuario)
+//                            ("${document.getString("nombre_empresa")} ")?.let { it1 ->
+//                                modelFavorito?.nombre_empresa(
+//                                    it1
+//                                )
+//                            }
+//                            ("${document.getString("pais")}")?.let { it1 ->
+//                                modelFavorito?.pais(
+//                                    it1
+//                                )
+//                            }
+//                            ("${document.getString("descripcion")}")?.let { it1 ->
+//                                modelFavorito?.descripcion(
+//                                    it1
+//                                )
+//                            }
+//                            ("${document.getString("habilidades")}")?.let { it1 ->
+//                                modelFavorito?.habilidades(
+//                                    it1
+//                                )
+//                            }
+//                            ("${document.getString("experiencia")}")?.let { it1 ->
+//                                modelFavorito?.experiencia(
+//                                    it1
+//                                )
+//                            }
+//                            ("${document.getString("vacantes")}")?.let { it1 ->
+//                                modelFavorito?.vacantes(
+//                                    it1
+//                                )
+//                            }
+//                            ("${document.getString("titulo")}")?.let { it1 ->
+//                                modelFavorito?.titulo(
+//                                    it1
+//                                )
+//                            }
+//                            document.getString("foto")?.let { it1 -> modelFavorito?.foto(it1) }
+////                            modelPerfil?.nombre(document.getString("nombre"))
+//                        }
+//                    }
+//                    .addOnFailureListener { exception ->
+//                        Log.w(TAG, "Error en UserActivity para favoritos: ", exception)
+//                    }
+//            }
+//
+//
+//        }
+//        -----------------------------------------------------------------------------
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -123,11 +197,13 @@ class UserActivity : AppCompatActivity() {
         val _nombre_empresa = MutableLiveData<Any>()
         val _fecha = MutableLiveData<Any>()
 
-        //        val _pais = MutableLiveData<Any>()
+        val _pais = MutableLiveData<Any>()
         val _descripcion = MutableLiveData<Any>()
         val _habilidades = MutableLiveData<Any>()
         val _experiencia = MutableLiveData<Any>()
         val _vacantes = MutableLiveData<Any>()
+        val _correo = MutableLiveData<Any>()
+        val _id = MutableLiveData<Any>()
 
 
         fun titulo(msg: kotlin.String) {
@@ -149,11 +225,12 @@ class UserActivity : AppCompatActivity() {
             _fecha.setValue(msg)
 
         }
+        fun pais(msg: String) {
+            _pais.setValue(msg)
 
-        //        fun pais(msg: kotlin.String) {
-//            _pais.setValue(msg)
-//
-//        }
+        }
+
+
         fun descripcion(msg: kotlin.String) {
             _descripcion.setValue(msg)
 
@@ -171,6 +248,16 @@ class UserActivity : AppCompatActivity() {
 
         fun vacantes(msg: kotlin.String) {
             _vacantes.setValue(msg)
+
+        }
+
+        fun correo(msg: kotlin.String) {
+            _correo.setValue(msg)
+
+        }
+
+        fun id(msg: kotlin.String) {
+            _id.setValue(msg)
 
         }
     }
@@ -206,10 +293,12 @@ class UserActivity : AppCompatActivity() {
             _foto.setValue(msg)
 
         }
+
         fun pais(msg: kotlin.String) {
             _pais.setValue(msg)
 
         }
+
         fun descripcion(msg: kotlin.String) {
             _descripcion.setValue(msg)
 

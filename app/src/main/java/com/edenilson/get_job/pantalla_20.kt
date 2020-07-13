@@ -33,7 +33,7 @@ class pantalla_20 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_20_to_pantalla_21)
         }
 
-        (activity as UserActivity).supportActionBar?.title = ("Chat")
+        (activity as UserActivity).supportActionBar?.title = ("Solicitudes enviadas")
         return binding.root
     }
 

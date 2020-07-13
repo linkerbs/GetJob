@@ -7,12 +7,12 @@
         android:title="Inicio"/>
     <item
         android:id="@+id/pantalla_7"
-        android:icon="@drawable/ic_work"
-        android:title="Ofertas"/>
+        android:icon="@drawable/ic_heart"
+        android:title="Favoritos"/>
     <item
         android:id="@+id/pantalla_7"
-        android:icon="@drawable/ic_chats"
-        android:title="Chats"/>
+        android:icon="@drawable/ic_work"
+        android:title="Ofertas"/>
     <item
         android:id="@+id/pantalla_7"
         android:icon="@drawable/ic_person"

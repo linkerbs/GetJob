@@ -159,11 +159,13 @@ class pantalla_24 : Fragment(), (PostModel) -> Unit {
         model!!.foto(p1.foto)
         model!!.nombre_empresa(p1.nombre_empresa)
 //        model!!.fecha(p1.fecha_publicacion)
-//        model!!.pais(p1.pais)
+
         model!!.descripcion(p1.descripcion)
         model!!.habilidades(p1.habilidades)
         model!!.experiencia(p1.experiencia)
         model!!.vacantes(p1.vacantes)
+        model!!.correo(p1.correo)
+        model!!.pais(p1.pais)
 //        Log.d(TAG,"A ver: ${p1.fecha_publicacion}")
 ////        model!!.setMsgCommunicator(p1.nombre_empresa,p1.descripcion)
 //
