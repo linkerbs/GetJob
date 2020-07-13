@@ -52,7 +52,7 @@ class pantalla_10 : Fragment() {
                 ).show()
             } else {
                 val addOnCompleteListener = mAuth.signInWithEmailAndPassword(correo, contra)
-                    .addOnCompleteListener(Activity()) { task ->
+                    .addOnCompleteListener(this.requireActivity()) { task ->
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success")

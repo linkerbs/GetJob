@@ -85,7 +85,7 @@ class pantalla_9 : Fragment() {
             } else {
                 mAuth.createUserWithEmailAndPassword(correo, contra)
                     .addOnCompleteListener(
-                        Activity(),
+                        this.requireActivity(),
                         OnCompleteListener<AuthResult?> { task ->
                             if (task.isSuccessful) {
                                 // Sign in success, update UI with the signed-in user's information
