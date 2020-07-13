@@ -82,5 +82,8 @@ dependencies {
     implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0"
     implementation "android.arch.navigation:navigation-ui-ktx:1.0.0"
 
+//    Libreria para el icono de corazon
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+
 
 }

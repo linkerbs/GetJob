@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
+private const val TAG: String = "FirebaseRepo"
 
 class FirebaseRepo {
     private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -24,11 +25,16 @@ class FirebaseRepo {
 //            .whereEqualTo("correo",2)
             .orderBy("fecha_publicacion", Query.Direction.DESCENDING)
             .get()
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    Log.d(TAG, "Desde aqui recibo las ofertas")
+//                    Log.d(TAG, "${document.id} => ${document.data}")
+//                }
+//            }
 //        Log.i("FirebaseRepo","Termina de consultar las ofertas laborales")
     }
 
-    //    Obtener oferta laboral para la  empresa que lo posteo
-//
+
 //    Obtener oferta laboral para la  empresa que lo posteo
 //
     fun getEmpresa(correo: String): Task<QuerySnapshot> {
@@ -36,6 +42,22 @@ class FirebaseRepo {
             .collection("ofertas")
             .whereEqualTo("correo", correo)
             .get()
+
+    }
+
+    //    Obtener la oferta laboral favorita o la solicitud enviada
+//
+    fun getFavorito(correo: String): Task<QuerySnapshot> {
+        return firebaseFirestore
+            .collection("ofertas")
+            .whereArrayContains("usuarios", correo)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d(TAG, "Desde aqui recibo los favoritos")
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+            }
 
     }
 

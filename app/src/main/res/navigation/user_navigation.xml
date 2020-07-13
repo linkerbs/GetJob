@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_pantalla_23_to_pantalla_223"
             app:destination="@id/pantalla_22" />
+        <action
+            android:id="@+id/action_pantalla_23_to_pantalla_5_3"
+            app:destination="@id/pantalla_5_3" />
     </fragment>
     <fragment
         android:id="@+id/pantalla_24"

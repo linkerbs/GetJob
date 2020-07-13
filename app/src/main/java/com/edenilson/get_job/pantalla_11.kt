@@ -104,7 +104,7 @@ class pantalla_11 : Fragment(), (PostModel) -> Unit {
                         postList = it.result!!.toObjects(PostModel::class.java)
                         postListAdapter.postListItems = postList
                         postListAdapter.notifyDataSetChanged()
-                        Log.d(TAG, "Usuario: ${it.result}")
+                        Log.d(TAG, "Se envio la data. Usuario: ${it.result}")
                     } else {
                         Log.d(TAG, "Error: ${it.exception!!.message}")
 
