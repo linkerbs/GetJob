@@ -8,6 +8,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.messaging.FirebaseMessaging
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        notificacion()
 
         val NavController = this.findNavController(R.id.MyNavHostFragment1)
         NavigationUI.setupActionBarWithNavController(this, NavController)
@@ -82,6 +85,25 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    private fun notificacion(){
+        //IDENTIFICAR EL TOKEN DE DISPOSITVO PARA ENVIARLE A EL UNICAMENTE LA NOTIFICACION
+        FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener {
+            it.result?.token.let {
+                println("Este es el Identificador del dispositivo: ${it}")
+            }
+        }
+        //TEMAS(TOPICS)
+        FirebaseMessaging.getInstance().subscribeToTopic("Se busca panadero")
+        //Recuperar informacion
+        val url:String? = intent.getStringExtra("url")
+        url?.let {
+            println("Ha llegado una informacion de empresa:${it}")
+        }
+    }
+
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         val NavController = this.findNavController(R.id.MyNavHostFragment1)

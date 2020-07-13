@@ -27,6 +27,7 @@ class CompanyActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
+
         val NavController = this.findNavController(R.id.MyNavHostFragment2)
         NavigationUI.setupActionBarWithNavController(this, NavController)
 

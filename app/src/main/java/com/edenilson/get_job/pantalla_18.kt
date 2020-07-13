@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.edenilson.get_job.databinding.FragmentPantalla18Binding
+import com.google.firebase.iid.FirebaseInstanceId
 
 /**
  * A simple [Fragment] subclass.
@@ -22,8 +23,12 @@ class pantalla_18 : Fragment() {
             inflater, R.layout.fragment_pantalla_18
             , container, false)
 
+
+
         (activity as CompanyActivity ).supportActionBar?.title = ("Notificaciones")
         return binding.root
     }
+
+
 
 }
