@@ -1,5 +1,7 @@
 package com.edenilson.get_job
 
+import android.database.MatrixCursor
+import android.opengl.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +14,11 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.collection.ArraySortedMap
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.core.ArrayContainsAnyFilter
+import com.google.protobuf.LazyStringArrayList
+import java.util.*
 
 private const val TAG: String = "CompanyActivity"
 class CompanyActivity : AppCompatActivity() {
@@ -151,6 +157,7 @@ class CompanyActivity : AppCompatActivity() {
         val _vacantes = MutableLiveData<Any>()
         val _sp_experiencia = MutableLiveData<Any>()
         val _correo = MutableLiveData<Any>()
+        val _aplicados = MutableLiveData<Any>()
 
 
         fun titulo(msg: kotlin.String) {
@@ -202,6 +209,10 @@ class CompanyActivity : AppCompatActivity() {
         }
         fun correo(msg: kotlin.String) {
             _correo.setValue(msg)
+
+        }
+        fun aplicados(msg: ArrayList<String> ) {
+            _aplicados.setValue(msg)
 
         }
     }

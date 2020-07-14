@@ -128,7 +128,9 @@ class pantalla_13 : Fragment() {
                                         )
                                     }
 
+
                             }
+
                         }
                         .addOnFailureListener { exception ->
                             Log.w(ContentValues.TAG, "Error getting documents: ", exception)

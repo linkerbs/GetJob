@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.edenilson.get_job.databinding.FragmentPantalla32Binding
 
@@ -13,6 +14,9 @@ import com.edenilson.get_job.databinding.FragmentPantalla32Binding
  * A simple [Fragment] subclass.
  */
 class pantalla_32 : Fragment() {
+
+    //    Esto es para utilizarlo con el modelView
+    private var model: CompanyActivity.Communicator? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,10 +27,11 @@ class pantalla_32 : Fragment() {
             inflater, R.layout.fragment_pantalla_32
             , container, false)
 
-        binding.btnPerfil.setOnClickListener {view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_32_to_pantalla_34)
-        }
-        (activity as CompanyActivity).supportActionBar?.title = ("Postulante")
+        //        Esto es para utilizarlo con modelView
+        model = ViewModelProviders.of(activity!!).get(CompanyActivity.Communicator::class.java)
+
+        //        Asigno nombre de la activity
+        (activity as CompanyActivity).supportActionBar?.title = (model!!._titulo.value.toString())
         return binding.root
 
 
