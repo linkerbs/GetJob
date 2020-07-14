@@ -96,6 +96,30 @@ class FirebaseRepo {
     }
 
 
+    //    Obtener la oferta laboral que tienen postulantes
+    fun getMisAplicados(correo:String): Task<QuerySnapshot> {
+        return firebaseFirestore
+            .collection("ofertas")
+            .whereArrayContains("aplicados", correo)
+            .whereEqualTo("estado", true)
+//            .orderBy("fecha_publicacion", Query.Direction.DESCENDING)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d(TAG, "Esto son los aplicados")
+                    Log.d(TAG, "${document.id} => ${document.data}")
+
+
+                }
+
+
+
+
+            }
+
+    }
+
+
 
 
 }

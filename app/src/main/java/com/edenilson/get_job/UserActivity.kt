@@ -85,6 +85,11 @@ class UserActivity : AppCompatActivity() {
                                     it1
                                 )
                             }
+                            ("${document.getString("cv")}")?.let { it1 ->
+                                modelPerfil?.cv(
+                                    it1
+                                )
+                            }
                             document.getString("foto")?.let { it1 -> modelPerfil?.foto(it1) }
 //                            modelPerfil?.nombre(document.getString("nombre"))
                         }
@@ -96,77 +101,10 @@ class UserActivity : AppCompatActivity() {
 
 
         }
-//---------------------------------------------------------------------------------------------
-//Seccion para traer la data de favoritos
-        //        llevo la informacion a la pantalla_23
-
-//        modelFavorito = ViewModelProviders.of(this).get(UserActivity.Communicator::class.java)
-//
-////        ocupo el mismo user de arribita
-//        user?.let {
-//            val correo = user.email
-//            Log.d(TAG, "Usuario para favoritos: ${user.uid}")
-//
-////    Obtengo la informacion del perfil del USUARIO
-//            if (correo != null) {
-//
-//                firebaseFirestore.collection("ofertas")
-//                    .whereArrayContains("usuarios", correo)
-//                    .get()
-//                    .addOnSuccessListener { documents ->
-//                        for (document in documents) {
-//                            Log.d(TAG,"Desde aqui recibo la data de favoritos")
-//                            Log.d(TAG, "${document.id} => ${document.data}")
-////                            binding.tvNombreUsuario.text = document.getString("nombre")
-////                            Glide.with(this).load(document.getString("foto")).into(binding.imgBtnPerfilUsuario)
-//                            ("${document.getString("nombre_empresa")} ")?.let { it1 ->
-//                                modelFavorito?.nombre_empresa(
-//                                    it1
-//                                )
-//                            }
-//                            ("${document.getString("pais")}")?.let { it1 ->
-//                                modelFavorito?.pais(
-//                                    it1
-//                                )
-//                            }
-//                            ("${document.getString("descripcion")}")?.let { it1 ->
-//                                modelFavorito?.descripcion(
-//                                    it1
-//                                )
-//                            }
-//                            ("${document.getString("habilidades")}")?.let { it1 ->
-//                                modelFavorito?.habilidades(
-//                                    it1
-//                                )
-//                            }
-//                            ("${document.getString("experiencia")}")?.let { it1 ->
-//                                modelFavorito?.experiencia(
-//                                    it1
-//                                )
-//                            }
-//                            ("${document.getString("vacantes")}")?.let { it1 ->
-//                                modelFavorito?.vacantes(
-//                                    it1
-//                                )
-//                            }
-//                            ("${document.getString("titulo")}")?.let { it1 ->
-//                                modelFavorito?.titulo(
-//                                    it1
-//                                )
-//                            }
-//                            document.getString("foto")?.let { it1 -> modelFavorito?.foto(it1) }
-////                            modelPerfil?.nombre(document.getString("nombre"))
-//                        }
-//                    }
-//                    .addOnFailureListener { exception ->
-//                        Log.w(TAG, "Error en UserActivity para favoritos: ", exception)
-//                    }
-//            }
-//
-//
-//        }
-//        -----------------------------------------------------------------------------
+//        ---
     }
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         val NavController = this.findNavController(R.id.MyNavHostFragment3)

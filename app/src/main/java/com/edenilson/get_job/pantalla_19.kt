@@ -30,6 +30,8 @@ import java.util.*
 /**
  * A simple [Fragment] subclass.
  */
+private const val TAG: String = "pantalla_19"
+
 class pantalla_19 : Fragment() {
     //    Esto es para utilizarlo con el modelView con la data del usuario
     private var modelPerfil: UserActivity.getPerfil? = null
@@ -39,6 +41,7 @@ class pantalla_19 : Fragment() {
     private var firebaseStore: FirebaseStorage? = null
     private var storageReference: StorageReference? = null
     var selectedPhoto: Uri? = null
+    val firebaseFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -68,9 +71,9 @@ class pantalla_19 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_19_to_pantalla_30)
         }
 
-        if(modelPerfil!!._cv.value.toString() != null){
-            binding.btVer.visibility = VISIBLE
-        }
+//        if(modelPerfil!!._cv.value.toString().isNullOrEmpty()){
+//            binding.btVer.visibility = VISIBLE
+//        }
 
         binding.btVer.setOnClickListener{
             val db = FirebaseFirestore.getInstance()
@@ -147,10 +150,13 @@ class pantalla_19 : Fragment() {
         }
 
 
+
         return binding.root
 
 
     }
+
+
 
 
     private fun pdfUpload() {
@@ -179,7 +185,13 @@ class pantalla_19 : Fragment() {
                                   db.collection("usuarios").document(document.id)
                                       .update(
                                           "cv" , it.toString()
-                                      )
+                                      ).addOnFailureListener { e ->
+                                          Log.w(
+                                              ContentValues.TAG,
+                                              "Se subio el PDF",
+                                              e
+                                          )
+                                      }
                               }
                           }.addOnFailureListener { e ->
                               Log.w(
@@ -190,6 +202,7 @@ class pantalla_19 : Fragment() {
                           }
 
                 }
+                Log.d(TAG,"Se esta cargando")
             }
 
         }

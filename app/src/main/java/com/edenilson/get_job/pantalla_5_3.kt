@@ -112,7 +112,7 @@ class pantalla_5_3 : Fragment() {
                                     )
                                 } .addOnCompleteListener {
 //                                Aqui iria si lo marco como favorito o no
-                                    Toast.makeText(activity,"Ya has aplicado para esta oferta laboral",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(activity,"Se ha enviado con exito",Toast.LENGTH_SHORT).show();
                                 }
 
                         }
