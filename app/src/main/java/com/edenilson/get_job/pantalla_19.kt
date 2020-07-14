@@ -71,9 +71,6 @@ class pantalla_19 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_19_to_pantalla_30)
         }
 
-//        if(modelPerfil!!._cv.value.toString().isNullOrEmpty()){
-//            binding.btVer.visibility = VISIBLE
-//        }
 
         binding.btVer.setOnClickListener{
             val db = FirebaseFirestore.getInstance()
@@ -86,12 +83,16 @@ class pantalla_19 : Fragment() {
                    addOnSuccessListener { documents ->
                        for (document in documents) {
 
-                           startActivity(
-                               Intent(
-                                   Intent.ACTION_VIEW,
-                                   Uri.parse( document.getString("cv"))
+                           if(document.getString("cv") != "") {
+                               startActivity(
+                                   Intent(
+                                       Intent.ACTION_VIEW,
+                                       Uri.parse(document.getString("cv"))
+                                   )
                                )
-                           )
+                           }else{
+
+                           }
                        }
                    }
            }

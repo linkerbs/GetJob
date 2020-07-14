@@ -156,7 +156,7 @@ class pantalla_13 : Fragment() {
 
             val contentView = RemoteViews(activity!!.packageName,R.layout.notificacion_layout)
             contentView.setTextViewText(R.id.tv_title,"OFERTA DE EMPLEO")
-            contentView.setTextViewText(R.id.tv_content,"Se ha publicado una nueva oferta")
+            contentView.setTextViewText(R.id.tv_content,"Tu oferta ha sido publicada")
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 notificacionChannel = NotificationChannel(channelId,description,NotificationManager.IMPORTANCE_HIGH)

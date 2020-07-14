@@ -78,7 +78,7 @@ class pantalla_9 : Fragment() {
             var contra: String = binding.etContraUsuarios?.text.toString()
             var contra2: String = binding.etContraAgainUsuarios?.text.toString()
 
-            if (nombre.isEmpty() || correo.isEmpty() || contra.isEmpty() || contra2.isEmpty() || apellido.isEmpty()|| selectedPhoto == null) {
+            if (nombre.isEmpty() || correo.isEmpty() || contra.isEmpty() || contra2.isEmpty() || apellido.isEmpty()|| selectedPhoto == null || contra.length < 8 || contra2.length < 8) {
                 Toast.makeText(activity, "Rellene todos los campos", Toast.LENGTH_LONG).show()
             } else if (contra != contra2) {
                 Toast.makeText(activity, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show()
