@@ -12,6 +12,11 @@ android {
         enabled = true
     }
 
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
     defaultConfig {
         applicationId "com.edenilson.get_job"
         minSdkVersion 19
@@ -34,6 +39,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$supportlibVersion"

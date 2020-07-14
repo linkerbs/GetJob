@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-<!--   Aqui inicialiso la app porque lo primero que va a cargar es la pantalla de splash-->
-        <activity android:name=".splash_start"
+        <activity android:name=".PdfActivity"></activity>
+        <!-- Aqui inicialiso la app porque lo primero que va a cargar es la pantalla de splash -->
+        <activity
+            android:name=".splash_start"
             android:theme="@style/splash_start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".CompanyActivity" />
         <activity android:name=".UserActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

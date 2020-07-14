@@ -58,6 +58,8 @@ class pantalla_30 : Fragment() {
 //        binding.tvDescripcionCompletaUsuario.text = modelPerfil!!._nombre.value.toString()
         val imagen = modelPerfil!!._foto.value.toString()
         binding.imgFotoPerfil?.let { Glide.with(this).load(imagen).into(it) }
+        
+        
 
 
 

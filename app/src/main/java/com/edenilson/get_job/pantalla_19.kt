@@ -5,15 +5,12 @@ import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -21,13 +18,10 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.edenilson.get_job.databinding.FragmentPantalla19Binding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.fragment_pantalla_19.*
-import kotlinx.android.synthetic.main.fragment_pantalla_9.*
 import java.util.*
 
 
@@ -74,9 +68,28 @@ class pantalla_19 : Fragment() {
 
         binding.btCerrar.setOnClickListener { view: View ->
 
-            Firebase.auth.signOut()
+            val db = FirebaseFirestore.getInstance()
+            val user = FirebaseAuth.getInstance().currentUser
+            user?.let {
+                val correo = user.email
+                db.collection("usuarios")
+                    .whereEqualTo("correo",correo)
+                    .get().
+                    addOnSuccessListener { documents ->
+                        for (document in documents) {
+
+                            startActivity(
+                                Intent(
+                                    Intent.ACTION_VIEW,
+                                    Uri.parse( document.getString("cv"))
+                                )
+                            )
+                        }
+                    }
+            }
+            /*Firebase.auth.signOut()
             val intent = Intent(activity, MainActivity::class.java)
-            activity!!.startActivity(intent)
+            activity!!.startActivity(intent)*/
 
         }
 
@@ -134,7 +147,7 @@ class pantalla_19 : Fragment() {
     private fun pdfUpload() {
 
 
-        var devolver: String = ""
+
         val db = FirebaseFirestore.getInstance()
 
         val user = FirebaseAuth.getInstance().currentUser
