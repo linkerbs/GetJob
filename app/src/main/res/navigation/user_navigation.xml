@@ -81,7 +81,11 @@
         android:id="@+id/pantalla_30"
         android:name="com.edenilson.get_job.pantalla_30"
         android:label="fragment_pantalla_30"
-        tools:layout="@layout/fragment_pantalla_30" />
+        tools:layout="@layout/fragment_pantalla_30" >
+        <action
+            android:id="@+id/action_pantalla_30_to_pantalla_19"
+            app:destination="@id/pantalla_19" />
+    </fragment>
     <fragment
         android:id="@+id/pantalla_3_3"
         android:name="com.edenilson.get_job.pantalla_3_3"

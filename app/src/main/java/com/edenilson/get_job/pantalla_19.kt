@@ -18,7 +18,9 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.edenilson.get_job.databinding.FragmentPantalla19Binding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.fragment_pantalla_19.*
@@ -66,30 +68,37 @@ class pantalla_19 : Fragment() {
             view.findNavController().navigate(R.id.action_pantalla_19_to_pantalla_30)
         }
 
+        if(modelPerfil!!._cv.value.toString() != null){
+            binding.btVer.visibility = VISIBLE
+        }
+
+        binding.btVer.setOnClickListener{
+            val db = FirebaseFirestore.getInstance()
+           val user = FirebaseAuth.getInstance().currentUser
+           user?.let {
+               val correo = user.email
+               db.collection("usuarios")
+                   .whereEqualTo("correo",correo)
+                   .get().
+                   addOnSuccessListener { documents ->
+                       for (document in documents) {
+
+                           startActivity(
+                               Intent(
+                                   Intent.ACTION_VIEW,
+                                   Uri.parse( document.getString("cv"))
+                               )
+                           )
+                       }
+                   }
+           }
+        }
         binding.btCerrar.setOnClickListener { view: View ->
 
-            val db = FirebaseFirestore.getInstance()
-            val user = FirebaseAuth.getInstance().currentUser
-            user?.let {
-                val correo = user.email
-                db.collection("usuarios")
-                    .whereEqualTo("correo",correo)
-                    .get().
-                    addOnSuccessListener { documents ->
-                        for (document in documents) {
 
-                            startActivity(
-                                Intent(
-                                    Intent.ACTION_VIEW,
-                                    Uri.parse( document.getString("cv"))
-                                )
-                            )
-                        }
-                    }
-            }
-            /*Firebase.auth.signOut()
+            Firebase.auth.signOut()
             val intent = Intent(activity, MainActivity::class.java)
-            activity!!.startActivity(intent)*/
+            activity!!.startActivity(intent)
 
         }
 

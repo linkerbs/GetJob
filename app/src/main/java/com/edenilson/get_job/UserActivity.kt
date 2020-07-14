@@ -275,12 +275,18 @@ class UserActivity : AppCompatActivity() {
         val _apellido = MutableLiveData<Any>()
         val _correo = MutableLiveData<Any>()
         val _pais = MutableLiveData<Any>()
+        val _cv = MutableLiveData<Any>()
         val _descripcion = MutableLiveData<Any>()
         val _foto = MutableLiveData<Any>()
 
 
         fun nombre(msg: kotlin.String) {
             _nombre.setValue(msg)
+
+        }
+
+        fun cv(msg: kotlin.String) {
+            _cv.setValue(msg)
 
         }
 

@@ -20,6 +20,7 @@ class PostModel(
     val habilidades: String = "",
     val experiencia: String = "",
 
+
     val correo: String = "",
 
     val titulo: String = "",

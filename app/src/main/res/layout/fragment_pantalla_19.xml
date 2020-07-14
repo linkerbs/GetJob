@@ -159,6 +159,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <Button
+            android:id="@+id/btVer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descargar CV"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btPdf" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

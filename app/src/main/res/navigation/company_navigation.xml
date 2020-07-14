@@ -80,7 +80,11 @@
     <fragment
         android:id="@+id/pantalla_172"
         android:name="com.edenilson.get_job.pantalla_17"
-        android:label="pantalla_17" />
+        android:label="pantalla_17" >
+        <action
+            android:id="@+id/action_pantalla_172_to_pantalla_17"
+            app:destination="@id/pantalla_17" />
+    </fragment>
     <fragment
         android:id="@+id/pantalla_32"
         android:name="com.edenilson.get_job.pantalla_32"
