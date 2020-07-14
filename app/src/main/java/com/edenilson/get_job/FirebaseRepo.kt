@@ -20,6 +20,7 @@ class FirebaseRepo {
 
 
     fun getPostList(): Task<QuerySnapshot> {
+
         return firebaseFirestore
             .collection("ofertas")
 //            .whereEqualTo("correo",2)
@@ -38,18 +39,18 @@ class FirebaseRepo {
 //    Obtener oferta laboral para la  empresa que lo posteo
 //
     fun getEmpresa(correo: String): Task<QuerySnapshot> {
-        return firebaseFirestore
+    return firebaseFirestore
             .collection("ofertas")
 //            .orderBy("fecha_publicacion", Query.Direction.DESCENDING)
             .whereEqualTo("correo", correo)
 
             .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    Log.d(TAG, "Desde aqui recibo las ofertas")
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-            }
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    Log.d(TAG, "Desde aqui recibo las ofertas")
+//                    Log.d(TAG, "${document.id} => ${document.data}")
+//                }
+//            }
 
 
     }
@@ -69,6 +70,32 @@ class FirebaseRepo {
 //            }
 
     }
+
+
+    //    Obtener la oferta laboral que tienen postulantes
+    fun getAplicados(correo:String): Task<QuerySnapshot> {
+        return firebaseFirestore
+            .collection("ofertas")
+            .whereEqualTo("correo", correo)
+            .whereEqualTo("estado", true)
+//            .orderBy("fecha_publicacion", Query.Direction.DESCENDING)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d(TAG, "Esto son los aplicados")
+                    Log.d(TAG, "${document.id} => ${document.data}")
+
+
+                }
+
+
+
+
+            }
+
+    }
+
+
 
 
 }

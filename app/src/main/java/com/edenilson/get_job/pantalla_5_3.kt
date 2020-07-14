@@ -1,18 +1,15 @@
 package com.edenilson.get_job
 
 import android.content.ContentValues
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.edenilson.get_job.databinding.FragmentPantalla5Binding
 import com.google.firebase.auth.FirebaseAuth
@@ -21,7 +18,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.like.LikeButton
 import com.like.OnLikeListener
 import kotlinx.android.synthetic.main.fragment_pantalla_5.*
-import kotlinx.android.synthetic.main.ofertaslaborales_cards.*
 
 
 /**
@@ -82,17 +78,24 @@ class pantalla_5_3 : Fragment() {
                 var habilidades_oferta: String = model!!._habilidades.value.toString()
                 var correo_empresa: String = model!!._correo.value.toString()
 
-                db.collection("aplicados")
+
+
+
+
+                db.collection("ofertas")
+//                    .add(oferta_aplicada)
                     .whereEqualTo("correo", correo_empresa)
                     .whereEqualTo("titulo", titulo_oferta)
                     .whereEqualTo("habilidades", habilidades_oferta)
                     .get()
+
                     .addOnSuccessListener { documents ->
                         for (document in documents) {
 
-                            db.collection("aplicados").document(document.id)
+                            db.collection("ofertas").document(document.id)
                                 .update(
-                                    "aplicados" , FieldValue.arrayUnion(correo)
+                                    "aplicados" , FieldValue.arrayUnion(correo),
+                                    "estado",true
                                 )
                                 .addOnSuccessListener { documentReference ->
                                     Log.d(
