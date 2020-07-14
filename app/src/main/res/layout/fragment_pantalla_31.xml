@@ -154,7 +154,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_experiencia"
+            android:id="@+id/layout_experiencia_update"
             android:layout_width="148dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -169,7 +169,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
 
-                android:id="@+id/input_Experiencia"
+                android:id="@+id/input_Experiencia_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -189,7 +189,7 @@
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/layout_experiencia"
+            app:layout_constraintStart_toEndOf="@+id/layout_experiencia_update"
             app:layout_constraintTop_toBottomOf="@+id/label_experiencia" />
 
         <TextView
@@ -201,7 +201,7 @@
             android:text="Vacantes:"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_experiencia"
+            app:layout_constraintTop_toBottomOf="@+id/layout_experiencia_update"
             tools:ignore="MissingConstraints" />
 
 

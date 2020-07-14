@@ -69,6 +69,8 @@ class CompanyActivity : AppCompatActivity() {
         }
 
 
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -147,6 +149,8 @@ class CompanyActivity : AppCompatActivity() {
         val _habilidades = MutableLiveData<Any>()
         val _experiencia = MutableLiveData<Any>()
         val _vacantes = MutableLiveData<Any>()
+        val _sp_experiencia = MutableLiveData<Any>()
+        val _correo = MutableLiveData<Any>()
 
 
         fun titulo(msg: kotlin.String) {
@@ -190,6 +194,14 @@ class CompanyActivity : AppCompatActivity() {
 
         fun vacantes(msg: kotlin.String) {
             _vacantes.setValue(msg)
+
+        }
+        fun sp_experiencia(msg: kotlin.String) {
+            _sp_experiencia.setValue(msg)
+
+        }
+        fun correo(msg: kotlin.String) {
+            _correo.setValue(msg)
 
         }
     }

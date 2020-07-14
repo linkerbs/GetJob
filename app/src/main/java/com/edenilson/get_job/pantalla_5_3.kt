@@ -59,7 +59,8 @@ class pantalla_5_3 : Fragment() {
 //        binding.tvFechaPublicacion.text = model._fecha.value.toString()
         binding.tvDescripcionEmpleo.text = model._descripcion.value.toString()
         binding.tvHabilidades?.text = model._habilidades.value.toString()
-        binding.tvExperiencia?.text = model._experiencia.value.toString()
+//        Aqui fuciono la experiencia con el spinner
+        binding.tvExperiencia?.text = "${model._experiencia.value.toString() }  ${model._sp_experiencia.value.toString()}"
         binding.tvVacantes?.text = model._vacantes.value.toString()
         val imagen = model._foto.value.toString()
 

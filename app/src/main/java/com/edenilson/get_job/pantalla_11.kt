@@ -132,6 +132,8 @@ class pantalla_11 : Fragment(), (PostModel) -> Unit {
         model!!.habilidades(p1.habilidades)
         model!!.experiencia(p1.experiencia)
         model!!.vacantes(p1.vacantes)
+        model!!.sp_experiencia(p1.sp_experiencia)
+        model!!.correo(p1.correo)
 
         findNavController().navigate(R.id.pantalla_33)
 

@@ -166,6 +166,7 @@ class pantalla_24 : Fragment(), (PostModel) -> Unit {
         model!!.vacantes(p1.vacantes)
         model!!.correo(p1.correo)
         model!!.pais(p1.pais)
+        model!!.sp_experiencia(p1.sp_experiencia)
 //        Log.d(TAG,"A ver: ${p1.fecha_publicacion}")
 ////        model!!.setMsgCommunicator(p1.nombre_empresa,p1.descripcion)
 //

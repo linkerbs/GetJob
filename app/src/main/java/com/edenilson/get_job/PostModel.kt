@@ -17,7 +17,8 @@ class PostModel(
 
     val titulo: String = "",
     val vacantes: String = "",
-    val id: String = ""
+    val id: String = "",
+    val sp_experiencia:String =""
 
 
     )

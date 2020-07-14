@@ -204,6 +204,7 @@ class UserActivity : AppCompatActivity() {
         val _vacantes = MutableLiveData<Any>()
         val _correo = MutableLiveData<Any>()
         val _id = MutableLiveData<Any>()
+        val _sp_experiencia = MutableLiveData<Any>()
 
 
         fun titulo(msg: kotlin.String) {
@@ -258,6 +259,10 @@ class UserActivity : AppCompatActivity() {
 
         fun id(msg: kotlin.String) {
             _id.setValue(msg)
+
+        }
+        fun sp_experiencia(msg: kotlin.String) {
+            _sp_experiencia.setValue(msg)
 
         }
     }
