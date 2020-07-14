@@ -13,64 +13,6 @@
         android:layout_marginEnd="@dimen/margin_view">
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_buscar_oferta"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/btn_notificacion"
-            android:drawableLeft="@android:drawable/ic_menu_search"
-            android:hint="Buscar oferta laboral"
-            app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <ImageButton
-            android:id="@+id/btn_notificacion"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_notifications_black" />
-
-        <Button
-            android:id="@+id/btnFILTRO"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="@dimen/margin_view"
-            android:drawableLeft="@drawable/ic_drag_handle_black"
-            android:text="Filtros"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_buscar_oferta" />
-
-
-        <Switch
-            android:id="@+id/switch_experiencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginTop="24dp"
-            android:text="Experiencia"
-            app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/btnFILTRO"
-            app:layout_constraintTop_toBottomOf="@+id/et_buscar_oferta" />
-
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/margin_end_guide"
             android:layout_width="wrap_content"
@@ -92,7 +34,7 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnFILTRO" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

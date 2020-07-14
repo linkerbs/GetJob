@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -41,10 +42,10 @@ class pantalla_12 : Fragment(), (PostModel) -> Unit {
 //        }
 
 
-        binding.btnNotificacion.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_12_to_pantalla_182)
-
-        }
+//        binding.btnNotificacion.setOnClickListener { view: View ->
+//            view.findNavController().navigate(R.id.action_pantalla_12_to_pantalla_182)
+//
+//        }
 
         (activity as CompanyActivity).supportActionBar?.title = ("Solicitudes")
 //        Esto es para utilizarlo con modelView
@@ -103,7 +104,9 @@ class pantalla_12 : Fragment(), (PostModel) -> Unit {
         model!!.sp_experiencia(p1.sp_experiencia)
 //        model!!.aplicados(p1.aplicados)
 //        Log.d(TAG,"a VER: ${p1.aplicados}")
-        findNavController().navigate(R.id.pantalla_32)
+        Toast.makeText(activity,"Seccion en matenimiento ;(",Toast.LENGTH_LONG).show();
+
+
     }
 
 }

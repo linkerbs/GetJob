@@ -43,10 +43,10 @@ class pantalla_11 : Fragment(), (PostModel) -> Unit {
             , container, false
         )
 
-        binding.btnNotificacion.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_18)
-
-        }
+//        binding.btnNotificacion.setOnClickListener { view: View ->
+//            view.findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_18)
+//
+//        }
 
         binding.ofertasLaboralesList.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_fragment_pantalla_11_to_pantalla_33)

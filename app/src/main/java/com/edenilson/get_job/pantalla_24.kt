@@ -48,14 +48,14 @@ class pantalla_24 : Fragment(), (PostModel) -> Unit {
 //            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_5_3)
 //        }
 
-        binding.btnFILTRO.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_3_3)
-
-        }
-        binding.btnNotificacion.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_224)
-
-        }
+//        binding.btnFILTRO.setOnClickListener { view: View ->
+//            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_3_3)
+//
+//        }
+//        binding.btnNotificacion.setOnClickListener { view: View ->
+//            view.findNavController().navigate(R.id.action_pantalla_24_to_pantalla_224)
+//
+//        }
 
         (activity as UserActivity).supportActionBar?.title = ("Buscar Ofertas")
         // -----------------------------       reciclerview---------------------------------------------------------------

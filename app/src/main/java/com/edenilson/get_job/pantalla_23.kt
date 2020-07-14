@@ -41,9 +41,9 @@ class pantalla_23 : Fragment(), (PostModel) -> Unit {
             , container, false
         )
 
-        binding.btnNotificacion.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_23_to_pantalla_223)
-        }
+//        binding.btnNotificacion.setOnClickListener { view: View ->
+//            view.findNavController().navigate(R.id.action_pantalla_23_to_pantalla_223)
+//        }
 
         (activity as UserActivity).supportActionBar?.title = ("Favoritos")
 //        -----------------------------------------------------------------------------------
