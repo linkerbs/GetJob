@@ -91,7 +91,7 @@ class pantalla_8 : Fragment() {
             } else {
                 mAuth.createUserWithEmailAndPassword(correo, contra)
                     .addOnCompleteListener(
-                        Activity(),
+                        this.requireActivity(),
                         OnCompleteListener<AuthResult?> { task ->
                             if (task.isSuccessful) {
 

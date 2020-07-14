@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.edenilson.get_job.databinding.FragmentPantalla5Binding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.like.LikeButton
@@ -67,6 +68,60 @@ class pantalla_5_3 : Fragment() {
 
         Glide.with(this).load(imagen).into(binding.imageView3)
 
+        binding.btnEnviarCv?.setOnClickListener {
+
+            val db = FirebaseFirestore.getInstance()
+
+            val user = FirebaseAuth.getInstance().currentUser
+            user?.let {
+                val correo = user.email
+                val model =
+                    ViewModelProviders.of(activity!!).get(UserActivity.Communicator::class.java)
+                var titulo_oferta: String = model!!._titulo.value.toString()
+
+                var habilidades_oferta: String = model!!._habilidades.value.toString()
+                var correo_empresa: String = model!!._correo.value.toString()
+
+                db.collection("ofertas")
+                    .whereEqualTo("correo", correo_empresa)
+                    .whereEqualTo("titulo", titulo_oferta)
+                    .whereEqualTo("habilidades", habilidades_oferta)
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        for (document in documents) {
+
+                            db.collection("ofertas").document(document.id)
+                                .update(
+                                    "aplicados" , FieldValue.arrayUnion(correo)
+                                )
+                                .addOnSuccessListener { documentReference ->
+                                    Log.d(
+                                        ContentValues.TAG,
+                                        "Se aplico a la oferta"
+                                    )
+
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.w(
+                                        ContentValues.TAG,
+                                        "F",
+                                        e
+                                    )
+                                } .addOnCompleteListener {
+//                                Aqui iria si lo marco como favorito o no
+                                    Log.d(TAG,"Ya has aplicado")
+                                }
+
+                        }
+                        }
+
+
+
+                    }
+
+            }
+
+
 
 
         return binding.root
@@ -83,7 +138,7 @@ class pantalla_5_3 : Fragment() {
         var titulo_oferta: String = model!!._titulo.value.toString()
 
         var habilidades_oferta: String = model!!._habilidades.value.toString()
-          var correo_empresa: String = model!!._correo.value.toString()
+        var correo_empresa: String = model!!._correo.value.toString()
 
         modelPerfil = ViewModelProviders.of(activity!!).get(UserActivity.getPerfil::class.java)
 
