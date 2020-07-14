@@ -40,8 +40,17 @@ class FirebaseRepo {
     fun getEmpresa(correo: String): Task<QuerySnapshot> {
         return firebaseFirestore
             .collection("ofertas")
+//            .orderBy("fecha_publicacion", Query.Direction.DESCENDING)
             .whereEqualTo("correo", correo)
+
             .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d(TAG, "Desde aqui recibo las ofertas")
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+            }
+
 
     }
 
@@ -52,12 +61,12 @@ class FirebaseRepo {
             .collection("ofertas")
             .whereArrayContains("usuarios", correo)
             .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    Log.d(TAG, "Desde aqui recibo los favoritos")
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-            }
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    Log.d(TAG, "Desde aqui recibo los favoritos")
+//                    Log.d(TAG, "${document.id} => ${document.data}")
+//                }
+//            }
 
     }
 
