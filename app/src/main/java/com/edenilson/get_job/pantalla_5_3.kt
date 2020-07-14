@@ -82,7 +82,7 @@ class pantalla_5_3 : Fragment() {
                 var habilidades_oferta: String = model!!._habilidades.value.toString()
                 var correo_empresa: String = model!!._correo.value.toString()
 
-                db.collection("ofertas")
+                db.collection("aplicados")
                     .whereEqualTo("correo", correo_empresa)
                     .whereEqualTo("titulo", titulo_oferta)
                     .whereEqualTo("habilidades", habilidades_oferta)
@@ -90,7 +90,7 @@ class pantalla_5_3 : Fragment() {
                     .addOnSuccessListener { documents ->
                         for (document in documents) {
 
-                            db.collection("ofertas").document(document.id)
+                            db.collection("aplicados").document(document.id)
                                 .update(
                                     "aplicados" , FieldValue.arrayUnion(correo)
                                 )
@@ -109,7 +109,7 @@ class pantalla_5_3 : Fragment() {
                                     )
                                 } .addOnCompleteListener {
 //                                Aqui iria si lo marco como favorito o no
-                                    Log.d(TAG,"Ya has aplicado")
+                                    Toast.makeText(activity,"Ya has aplicado para esta oferta laboral",Toast.LENGTH_SHORT).show();
                                 }
 
                         }

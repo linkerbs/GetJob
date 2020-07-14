@@ -22,14 +22,8 @@ class pantalla_15 : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentPantalla15Binding>(
             inflater, R.layout.fragment_pantalla_15
             , container, false)
-        binding.notiEmpresa1.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_152_to_pantalla_14)
 
-        }
-        binding.notiEmpresa2.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_pantalla_152_to_pantalla_14)
 
-        }
         binding.btnNotificacion.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_pantalla_152_to_pantalla_18)
 

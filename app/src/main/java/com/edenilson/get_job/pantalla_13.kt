@@ -127,8 +127,55 @@ class pantalla_13 : Fragment() {
                                             e
                                         )
                                     }
+//        -------------------------------------------------------------------------------
+                                val emptyStringArray = arrayOf<String>()
+
+                                val oferta_aplicada: MutableMap<String, Any> =
+                                    HashMap()
+                                oferta_aplicada["titulo"] = titulo
+                                oferta_aplicada["descripcion"] = descripcion
+                                oferta_aplicada["experiencia"] = experiencias
+                                oferta_aplicada["habilidades"] = habilidades
+                                oferta_aplicada["vacantes"] = vacantes
+                                oferta_aplicada["fecha_publicacion"] = java.util.Calendar.getInstance().time
+                                oferta_aplicada["nombre_empresa"] = nombre
+                                oferta_aplicada["foto"] = foto
+                                oferta_aplicada["correo"] = correo
+                                oferta_aplicada["sp_experiencia"] = spinner
+//                                oferta_aplicada["aplicados"] = emptyStringArray
+
+
+                                Log.d(TAG, "El spinner: ${spinner}")
+
+                                db.collection("aplicados")
+                                    .add(oferta_aplicada)
+                                    .addOnSuccessListener { documentReference ->
+                                        Log.d(
+                                            ContentValues.TAG,
+                                            "Se agrego el documento con ID " + documentReference.id
+                                        )
+//                                        view?.findNavController()
+//                                            .navigate(R.id.action_pantalla_13_to_fragment_pantalla_11)
+                                    }
+                                    .addOnFailureListener { e ->
+                                        Log.w(
+                                            ContentValues.TAG,
+                                            "C mamo algo",
+                                            e
+                                        )
+                                    }
+
+
+
+
+
+
+
+
+ //          ---------------------------------------------------------------------------
 
                             }
+
                         }
                         .addOnFailureListener { exception ->
                             Log.w(ContentValues.TAG, "Error getting documents: ", exception)
