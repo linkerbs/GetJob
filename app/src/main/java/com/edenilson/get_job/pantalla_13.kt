@@ -1,8 +1,12 @@
 package com.edenilson.get_job
 
-import android.app.Activity
+import android.app.*
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -27,6 +32,12 @@ import kotlin.math.exp
  */
 class pantalla_13 : Fragment() {
 
+    lateinit var notificacionManager: NotificationManager
+    lateinit var notificacionChannel: NotificationChannel
+    lateinit var builder: Notification.Builder
+    private val channelId = "com.edenilson.get_job"
+    private val description = "Test notification"
+
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreateView(
@@ -38,6 +49,7 @@ class pantalla_13 : Fragment() {
             inflater, R.layout.fragment_pantalla_13
             , container, false
         )
+        notificacionManager = activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
 
 
@@ -120,6 +132,35 @@ class pantalla_13 : Fragment() {
 
 
             }
+            val intent = Intent(activity, LauncherActivity::class.java)
+            val pendingIntent = PendingIntent.getActivity(activity,0,intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+            val contentView = RemoteViews(activity!!.packageName,R.layout.notificacion_layout)
+            contentView.setTextViewText(R.id.tv_title,"OFERTA DE EMPLEO")
+            contentView.setTextViewText(R.id.tv_content,"Se ha publicado una nueva oferta")
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                notificacionChannel = NotificationChannel(channelId,description,NotificationManager.IMPORTANCE_HIGH)
+                notificacionChannel.enableLights(true)
+                notificacionChannel.lightColor = Color.BLUE
+                notificacionChannel.enableVibration(true)
+                notificacionManager.createNotificationChannel(notificacionChannel)
+
+                builder = Notification.Builder(activity,channelId)
+                    .setContent(contentView)
+                    .setSmallIcon(R.drawable.ic_notifications_black)
+                    .setLargeIcon(BitmapFactory.decodeResource(this.resources,R.mipmap.ic_launcher_round))
+                    .setContentIntent(pendingIntent)
+            }else{
+
+                builder = Notification.Builder(activity)
+                    .setContent(contentView)
+                    .setSmallIcon(R.drawable.ic_notifications_black)
+                    .setLargeIcon(BitmapFactory.decodeResource(this.resources,R.mipmap.ic_launcher_round))
+                    .setContentIntent(pendingIntent)
+            }
+            notificacionManager.notify(1234,builder.build())
+
             }
 
         return binding.root
