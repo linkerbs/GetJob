@@ -11,7 +11,7 @@ GetJob es una Aplicación para plataforma Android que facilita la búsqueda de e
 GetJob maneja solamente 2 tipos de usuario:
 
 **Usuario** : Perfil basico de un usuario normal, donde podra realizar:
-- [x] Consultar las ofertas laborales que las empresas que han posteado
+- [x] Consultar las ofertas laborales de las empresas que las han publicado
 - [x] Guardar esa oferta laboral como favorita
 - [x] Aplicar para dicha oferta
 - [X] Subir su Curriculum vitae en formato **PDF**
@@ -41,8 +41,10 @@ Para guardar todos los datos utilizamos Firebase, ocupando las tecnologias de:
 </p>
 
 # Usuarios de prueba y inicio de seión
-Para inicio de seión utilizamos el metodo de autenticacion por medio del proveedor correo electrónico/contraseña que utiliza Firebase
+Para inicio de seción utilizamos el metodo de autenticacion por medio del proveedor correo electrónico/contraseña que utiliza Firebase
 | Tipo de usuario | Correo | contraseña |
 | ------------- | ------------- | ------------- |
 | Usuario   | usuario@getjob.com  | 123456789 |
 | Empresa  | empresa@getjob.com  | 123456789  
+## Enlace para descargar la App en la Google Play Store
+Sigue en espera de aprobación :(
