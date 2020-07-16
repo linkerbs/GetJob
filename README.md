@@ -48,3 +48,7 @@ Para inicio de seción utilizamos el metodo de autenticacion por medio del prove
 | Empresa  | empresa@getjob.com  | 123456789  
 ## Enlace para descargar la App en la Google Play Store
 Sigue en espera de aprobación :(
+Posible link, de la app: https://play.google.com/store/apps/details?id=com.edenilson.get_job
+<p align="center">
+  <img src="https://firebasestorage.googleapis.com/v0/b/getjob-46015.appspot.com/o/captura.png?alt=media&token=1dbe37e0-59e9-4685-bf7f-78a62e5eb289" width="800"  title="hicimos el mayor esfuerzo posible :(">
+</p>
